@@ -54,10 +54,28 @@
       0% { background-position: 0 -100%; }
       100% { background-position: 0 200%; }
     }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -3;
+      pointer-events: none;
+      background: #000;
+    }
+    @media screen and (max-width: 768px) {
+      .video-bg { display: none; }
+    }
   </style>
 </head>
 
 <body id="page-top">
+  <video id="bg-vdo" class="video-bg" autoplay muted loop playsinline preload="auto" poster="img/intro-bg.png">
+    <source src="img/bg_vdo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <!-- Circuit Background Elements -->
   <div class="circuit-bg"></div>
   <div class="circuit-glow"></div>
@@ -97,7 +115,7 @@
       </div>
     </div>
   </nav>
-  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.png)">
+  <div id="home" class="intro route bg-image" style="background: transparent;">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
