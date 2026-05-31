@@ -61,9 +61,21 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      z-index: -3;
+      z-index: -1;
       pointer-events: none;
       background: #000;
+    }
+    .circuit-bg {
+      z-index: -3;
+    }
+    .circuit-glow {
+      z-index: -2;
+    }
+    .intro .overlay-itro {
+      z-index: 0;
+    }
+    .intro .intro-content {
+      z-index: 1;
     }
     @media screen and (max-width: 768px) {
       .video-bg { display: none; }
