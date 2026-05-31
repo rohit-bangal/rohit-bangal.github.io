@@ -148,9 +148,14 @@ a:hover {
 }
 
 .title-a {
+  color: #fff;
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.title-h1 {
+  color: #fff;
 }
 
 @media screen and (max-width: 500px) {
@@ -167,7 +172,7 @@ a:hover {
 }
 
 .subtitle-a {
-  color: #4e4e4e;
+  color: #cde1f8;
 }
 
 .line-mf {
