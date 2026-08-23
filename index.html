@@ -18,7 +18,7 @@
   <style>
     /* Clean Light Mode Background with Subtle Grid & Soft Ambient Glow */
     body {
-      background-color: #f8fafc !important;
+      background-color: #0b0c10 !important;
       color: #334155 !important;
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
@@ -27,7 +27,7 @@
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
       z-index: -2;
-      background-color: #f8fafc;
+      background-color: transparent;
       background-image: 
         radial-gradient(circle at 0px 0px, rgba(2, 132, 199, 0.12) 2px, transparent 3px),
         radial-gradient(circle at 25px 25px, rgba(0, 120, 255, 0.08) 2px, transparent 3px),
@@ -36,6 +36,7 @@
       background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
       background-position: 0 0, 0 0, 0 0, 0 0;
       animation: moveCircuitGrid 25s linear infinite;
+      pointer-events: none;
     }
     .circuit-glow {
       position: fixed;
@@ -49,7 +50,7 @@
       100% { background-position: 50px 50px; }
     }
 
-    /* Ultra-Clean Light Glass Cards */
+    /* Ultra-Clean Light Glass Cards with Corner Clipping */
     .box-shadow-full,
     .service-box,
     .work-box,
@@ -60,8 +61,22 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(226, 232, 240, 0.9) !important;
       border-radius: 20px !important;
+      overflow: hidden !important;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .work-img,
+    .card-img {
+      border-top-left-radius: 20px !important;
+      border-top-right-radius: 20px !important;
+      overflow: hidden !important;
+    }
+
+    .work-img img,
+    .card-img img,
+    .service-box img {
+      border-radius: inherit;
     }
     
     .box-shadow-full:hover,
@@ -95,19 +110,35 @@
       background-color: rgba(11, 15, 25, 0.65) !important;
     }
     
+    .title-box {
+      margin-bottom: 3rem !important;
+      text-align: center !important;
+    }
+
     .title-a, .title-h1 {
-      background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      background: none !important;
       font-weight: 800 !important;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.9) !important;
+      text-transform: uppercase !important;
     }
     
+    .subtitle-a {
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
     .line-mf {
       background: linear-gradient(90deg, #0284c7, #0078ff) !important;
       height: 4px !important;
       width: 70px !important;
       border-radius: 4px !important;
+      margin: 10px auto 0 auto !important;
     }
 
     .lead, p, span, li {
@@ -191,6 +222,10 @@
 </head>
 
 <body id="page-top">
+  <!-- Cool Full-Screen Background Video -->
+  <video autoplay loop muted playsinline id="bg-video" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -10; opacity: 0.9; filter: brightness(0.95);">
+    <source src="img/bg_vdo.mp4" type="video/mp4">
+  </video>
   <!-- Circuit Background Elements -->
   <div class="circuit-bg"></div>
   <div class="circuit-glow"></div>
@@ -579,7 +614,7 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
 		Row 2 research ppr
 	-->
       <div class="row">
-		  <div class="col-md-6" align="center">
+		  <div class="col-md-12">
 			  <a href="https://ieeexplore.ieee.org/document/8940566" target="_blank">
           <div class="service-box">
             <div class="service-ico">
@@ -590,7 +625,7 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
               <p class="s-description text-center">
                 Published: - December 26, 2019. Publisher: - IEEE
               </p>
-				<div class="wrapper">
+				<div class="wrapper text-center">
 				<button class="button-rouded" align="center" href="https://ieeexplore.ieee.org/document/8940566" target="_blank" >
 					See Publication
 				</button>
@@ -974,46 +1009,43 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
           </div>
         </div>
         <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            
+          <div class="work-box">
+            <a href="img/mahindra/snap.png" data-lightbox="eng_p3" data-title="Designed the algorithm to follow path using given co-ordinates using encoders as feedback. Designed and assembled the Pick and Place arm using linear actuators.">
               <div class="work-img">
                 <img src="img/mahindra/snap_sm.png" alt="" class="img-fluid">
               </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Pick and Place Automatic Guided Vehicle Scaled Robot</h2>
-					 <p>
-				  <button class="button1" data-modal="modal_mahindra">
-					Show Video
-				  </button>
-				</p>
-
-					<div id="modal_mahindra" class="modal">
-					  <div class="modal-content">
-						<div class="modal-body">
-							<video id="vid_mah" width="100%" src="img/mahindra/run.mp4" type="video/mp4" controls>
-							</video>
-						</div>
-					  </div>
-					</div>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Arduino, Encoder, Linear Actuator, IMU</span></div>
+            </a>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h2 class="w-title">Pick and Place Automatic Guided Vehicle Scaled Robot</h2>
+                  <p class="mt-2 mb-2">
+                    <button class="button1" data-modal="modal_mahindra">
+                      Show Video
+                    </button>
+                  </p>
+                  <div class="w-more">
+                    <span class="w-ctegory">Arduino, Encoder, Linear Actuator, IMU</span>
                   </div>
-					
-                  <div class="col-sm-2">
-					  <a href="img/mahindra/snap.png" data-lightbox="eng_p3" data-title="Designed the algorithm to follow path using given co-ordinates using encoders as feedback. Designed and assembled the Pick and Place arm using linear actuators.">
-					  
+                </div>
+                <div class="col-sm-2">
+                  <a href="img/mahindra/snap.png" data-lightbox="eng_p3" data-title="Designed the algorithm to follow path using given co-ordinates using encoders as feedback. Designed and assembled the Pick and Place arm using linear actuators.">
                     <div class="w-like">
                       <span class="ion-flash"></span>
                     </div>
-					  </a>
-						 <a href="img/Mahindra Certificate.jpg" data-lightbox="eng_p3"> </a>
-						 <a href="img/mahindra/schematic.jpg" data-lightbox="eng_p3"> </a>
-                  </div>
-					
+                  </a>
+                  <a href="img/Mahindra Certificate.jpg" data-lightbox="eng_p3"></a>
+                  <a href="img/mahindra/schematic.jpg" data-lightbox="eng_p3"></a>
                 </div>
               </div>
+            </div>
+            <div id="modal_mahindra" class="modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <video id="vid_mah" width="100%" src="img/mahindra/run.mp4" type="video/mp4" controls></video>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -1064,55 +1096,47 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
           </div>
         </div>
         <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            
+          <div class="work-box">
+            <a href="img/quadru/quadru.jpg" data-lightbox="eng_p6" data-title="Worked on designing, testing and validation of control system and electronics of robots. Worked on designing, modeling, manufacturing, assembly and validation of leg mechanism of robot.">
               <div class="work-img">
                 <img src="img/quadru/quadru.jpg" alt="" class="img-fluid">
               </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Quadruped Robot</h2>
-					  <p>
-				  <button class="button1" data-modal="modal_quadru">
-					Show Video
-				  </button><br><br>
-				</p>
-
-					<div id="modal_quadru" class="modal">
-					  <div class="modal-content">
-						<div class="modal-body">
-							<video id="vid_quad" width="100%" src="img/quadru/MR2.mp4" type="video/mp4" controls>
-							</video>
-						</div>
-					  </div>
-					</div>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Raspberry Pi, Arduino, Lead Screw Linear Actuator, IMU</span></div>
+            </a>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h2 class="w-title">Quadruped Robot</h2>
+                  <p class="mt-2 mb-2">
+                    <button class="button1" data-modal="modal_quadru">
+                      Show Video
+                    </button>
+                  </p>
+                  <div class="w-more">
+                    <span class="w-ctegory">Raspberry Pi, Arduino, Lead Screw Linear Actuator, IMU</span>
                   </div>
-					
-                  <div class="col-sm-2">
-					  <a href="img/quadru/quadru.jpg" data-lightbox="eng_p6" data-title="Worked on designing, testing and validation of control system and electronics of robots. Worked on designing, modeling, manufacturing, assembly and validation of leg mechanism of robot.">
-					  
+                </div>
+                <div class="col-sm-2">
+                  <a href="img/quadru/quadru.jpg" data-lightbox="eng_p6" data-title="Worked on designing, testing and validation of control system and electronics of robots. Worked on designing, modeling, manufacturing, assembly and validation of leg mechanism of robot.">
                     <div class="w-like">
                       <span class="ion-flash"></span>
                     </div>
-					  </a>
-						 <a href="img/quadru/slope.png" data-lightbox="eng_p6" data-title="Capable of climbing slope of upto 15 degrees"></a>
-            			 <a href="img/quadru/step.png" data-lightbox="eng_p6" data-title="Capable of crossing hurdles like steps"></a>
-            			 <a href="img/quadru/leglength.jpg" data-lightbox="eng_p6"></a>
-						 <a href="img/quadru/ip.png" data-lightbox="eng_p6" data-title="Image Processing Block Diagram Represenatation"></a>
-            			 <a href="img/quadru/Controller.png" data-lightbox="eng_p6" data-title="Arduino and IMU used to control the locomotion"></a>
-            			 <a href="img/quadru/motors.png" data-lightbox="eng_p6" data-title="BLDC motors and ODrive used to actuate and control the position of each leg"></a>
-                  </div>
+                  </a>
+                  <a href="img/quadru/slope.png" data-lightbox="eng_p6" data-title="Capable of climbing slope of upto 15 degrees"></a>
+                  <a href="img/quadru/step.png" data-lightbox="eng_p6" data-title="Capable of crossing hurdles like steps"></a>
+                  <a href="img/quadru/leglength.jpg" data-lightbox="eng_p6"></a>
+                  <a href="img/quadru/ip.png" data-lightbox="eng_p6" data-title="Image Processing Block Diagram Represenatation"></a>
+                  <a href="img/quadru/Controller.png" data-lightbox="eng_p6" data-title="Arduino and IMU used to control the locomotion"></a>
+                  <a href="img/quadru/motors.png" data-lightbox="eng_p6" data-title="BLDC motors and ODrive used to actuate and control the position of each leg"></a>
                 </div>
               </div>
-						  
-          </div>
-        </div>
-		  <div class="col-md-4">
-          <div class="work-box">
-            
+            </div>
+            <div id="modal_quadru" class="modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <video id="vid_quad" width="100%" src="img/quadru/MR2.mp4" type="video/mp4" controls></video>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -1391,21 +1415,15 @@ landing mechanism. The mechanism mainly used pneumatics to throw and land multip
                   </div>
                   <div class="more-info">
                     <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span>8185 Mountain View Dr., Pleasanton, CA 94588</li>
+                      <li><span class="ion-ios-location"></span>San Jose, CA</li>
                       <li><a href="tel:+1 (412) 657-7150"><span class="ion-ios-telephone"></span>+1 (412) 657-7150</a></li>
                       <li><a href="mailto:rohitbangal.rb@gmail.com"><span class="ion-email"></span>rohitbangal.rb@gmail.com</a></li>
                     </ul>
                   </div>
-                  <div class="socials">
-					  <a href="https://www.linkedin.com/in/rohitbangal" target="_blank"><i class="ion-social-linkedin" style="font-size: 40px;"></i></a>
-<!--
-                    <ul>
-                      <li><a href="www.linkedin.com/in/rohitbangal" target="_blank"><span class="ico-circle" style="margin-bottom: 20%"><i class="ion-social-linkedin"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-					  <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-					  <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>  
-                    </ul>
--->
+                  <div class="socials d-flex align-items-center">
+					  <a href="https://www.linkedin.com/in/rohitbangal" target="_blank" title="LinkedIn"><i class="ion-social-linkedin" style="font-size: 36px; color: #0284c7; margin-right: 20px; vertical-align: middle;"></i></a>
+					  <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" title="ORCID"><ion-icon name="finger-print-outline" style="font-size: 36px; color: #0f172a; margin-right: 20px; vertical-align: middle;"></ion-icon></a>
+					  <a href="https://www.semanticscholar.org/author/Rohit-Bangal/2213702117" target="_blank" title="Semantic Scholar"><ion-icon name="school-outline" style="font-size: 36px; color: #0284c7; vertical-align: middle;"></ion-icon></a>
                   </div>
                 </div>
               </div>
