@@ -27,7 +27,7 @@
     }
   });
   $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+    $('html, body').animate({scrollTop : 0}, 1800, 'easeInOutCubic');
     return false;
   });
 
@@ -35,7 +35,7 @@
 	$('.scrolltop-mf').on("click", function () {
 		$('html, body').animate({
 			scrollTop: 0
-		}, 1000);
+		}, 1800, 'easeInOutCubic');
 	});
 
 	/*--/ Star Counter /--*/
@@ -52,7 +52,7 @@
 			if (target.length) {
 				$('html, body').animate({
 					scrollTop: (target.offset().top - navHeight + 5)
-				}, 1000, "easeInOutExpo");
+				}, 1800, "easeInOutCubic");
 				return false;
 			}
 		}

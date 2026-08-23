@@ -16,43 +16,176 @@
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <style>
-    /* Animated Circuit Board Background */
+    /* Clean Light Mode Background with Subtle Grid & Soft Ambient Glow */
+    body {
+      background-color: #f8fafc !important;
+      color: #334155 !important;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
     .circuit-bg {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
       z-index: -2;
-      background-color: #0b0c10;
+      background-color: #f8fafc;
       background-image: 
-        /* Main Node Dots */
-        radial-gradient(circle at 0px 0px, rgba(0, 229, 255, 0.8) 2px, transparent 3px),
-        /* Secondary Offset Node Dots (Copper) */
-        radial-gradient(circle at 25px 25px, rgba(200, 107, 40, 0.8) 2px, transparent 3px),
-        /* Main Grid Traces */
-        linear-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 229, 255, 0.15) 1px, transparent 1px),
-        /* Secondary Offset Traces */
-        linear-gradient(rgba(200, 107, 40, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 107, 40, 0.05) 1px, transparent 1px);
-      background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px, 25px 25px, 25px 25px;
-      background-position: 0 0, 0 0, 0 0, 0 0, 12.5px 12.5px, 12.5px 12.5px;
-      animation: moveCircuitGrid 15s linear infinite;
+        radial-gradient(circle at 0px 0px, rgba(2, 132, 199, 0.12) 2px, transparent 3px),
+        radial-gradient(circle at 25px 25px, rgba(0, 120, 255, 0.08) 2px, transparent 3px),
+        linear-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
+      background-position: 0 0, 0 0, 0 0, 0 0;
+      animation: moveCircuitGrid 25s linear infinite;
     }
     .circuit-glow {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
       z-index: -1;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 229, 255, 0.05) 50%, rgba(0, 229, 255, 0.25) 100%);
-      background-size: 100% 200%;
-      animation: scanline 8s linear infinite;
-      pointer-events: none; /* Allows clicks to pass through to your actual content */
+      background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
     @keyframes moveCircuitGrid {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0, 12.5px 12.5px, 12.5px 12.5px; }
-      100% { background-position: 50px 50px, 50px 50px, 50px 50px, 50px 50px, 62.5px 62.5px, 62.5px 62.5px; }
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
     }
-    @keyframes scanline {
-      0% { background-position: 0 -100%; }
-      100% { background-position: 0 200%; }
+
+    /* Ultra-Clean Light Glass Cards */
+    .box-shadow-full,
+    .service-box,
+    .work-box,
+    .card-blog,
+    .counter-box {
+      background: rgba(255, 255, 255, 0.88) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.9) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    
+    .box-shadow-full:hover,
+    .service-box:hover,
+    .work-box:hover,
+    .card-blog:hover {
+      transform: translateY(-6px) scale(1.005) !important;
+      border-color: rgba(2, 132, 199, 0.35) !important;
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.12), 0 0 20px rgba(2, 132, 199, 0.08) !important;
+    }
+
+    /* Headings & Text Colors */
+    section h1, section h2, section h3, section h4, section h5, section h6, .s-title, .title-left, .title-s, .w-title {
+      color: #0f172a !important;
+    }
+    
+    /* Hero Intro Section Visibility Fixes */
+    #home h1.intro-title {
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7) !important;
+      font-weight: 800 !important;
+    }
+    #home h2 {
+      color: #38bdf8 !important;
+      -webkit-text-fill-color: #38bdf8 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+      font-weight: 600 !important;
+    }
+    .overlay-itro {
+      background-color: rgba(11, 15, 25, 0.65) !important;
+    }
+    
+    .title-a, .title-h1 {
+      background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px;
+    }
+    
+    .line-mf {
+      background: linear-gradient(90deg, #0284c7, #0078ff) !important;
+      height: 4px !important;
+      width: 70px !important;
+      border-radius: 4px !important;
+    }
+
+    .lead, p, span, li {
+      color: #475569 !important;
+    }
+    
+    .about-info p span, .s-description, .lead li b {
+      color: #1e293b !important;
+    }
+
+    /* Modern Light Fluid Buttons */
+    .button-rouded, .button1, .btn {
+      background: linear-gradient(135deg, #ffffff, #f0f9ff) !important;
+      border: 1px solid rgba(2, 132, 199, 0.35) !important;
+      color: #0284c7 !important;
+      border-radius: 30px !important;
+      padding: 10px 24px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08) !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .button-rouded:hover, .button1:hover, .btn:hover {
+      background: linear-gradient(135deg, #0284c7, #0078ff) !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.25) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Icon Circles */
+    .ico-circle {
+      border: 2px solid rgba(2, 132, 199, 0.3) !important;
+      background: rgba(2, 132, 199, 0.06) !important;
+      box-shadow: 0 0 15px rgba(2, 132, 199, 0.1) !important;
+      color: #0284c7 !important;
+    }
+
+    /* Badge Pills & Links */
+    .badge-pill-tech {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      margin: 4px;
+      border-radius: 20px;
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.25);
+      color: #0284c7 !important;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+    }
+    .badge-pill-tech:hover {
+      background: #0284c7;
+      color: #ffffff !important;
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Light Theme Nav Bar */
+    .navbar-b.navbar-trans .nav-link {
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+    .navbar-b.navbar-reduce {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    }
+    .navbar-b.navbar-reduce .nav-link {
+      color: #1e293b !important;
+      text-shadow: none !important;
+    }
+    .navbar-b.navbar-reduce .nav-link:hover, .navbar-b.navbar-reduce .nav-link.active {
+      color: #0284c7 !important;
     }
   </style>
 </head>
@@ -103,7 +236,7 @@
       <div class="table-cell">
         <div class="container">
           <h1 class="intro-title mb-4">I am Rohit Bangal</h1>
-			<h2 style="color: white">Electrical Engineer | MS ECE, Carnegie Mellon | Autonomous Systems Hardware</h2>
+			<h2 style="color: white">Electrical Engineer | MS ECE, Carnegie Mellon | Robotics</h2>
            <!--<p class="intro-subtitle"><span class="text-slider-items">Bachelor of Engineering - Instrumentation and Control, Enthusiast of Technology and Robotics</span><strong class="text-slider"></strong></p>
           <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
@@ -126,9 +259,9 @@
                   <div class="col-sm-6 col-md-7">
                     <div class="about-info">
                       <p><span class="title-s">Name: </span> <span>Rohit Prashant Bangal</span></p>
-<!--                      <p><span class="title-s">Profile: </span> <span>Project Engineer</span></p> -->
                       <p><span class="title-s">Email: </span> <span>rohitbangal.rb@gmail.com</span></p>
                       <p><span class="title-s">Mobile: </span> <span>+1 (412) 657-7150</span></p>
+                      <p><span class="title-s">ORCID: </span> <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" style="color: #0f172a; font-weight: 600; text-decoration: underline;">0009-0003-9104-2125</a></p>
                     </div>
                   </div>
                 </div>
@@ -142,42 +275,6 @@ sequencing; Board Bring-Up, Validation Testing, Lab Test Equipment (scopes, digi
 USB-C PD, Python scripting for validation tools, automated test workflows, and lab data processing</li>
 						<li><b>Programming Languages:</b> Python, Embedded C</li>
 					</ul>
-<!--
-                  <span>Process Control</span> <span class="pull-right">70%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>PLC, HMI and SCADA</span> <span class="pull-right">70%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-				  </div>
-				  <span>AutoCAD</span> <span class="pull-right">50%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-				  <span>Microsoft Office</span> <span class="pull-right">80%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Leadership and Management</span> <span class="pull-right">90%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div> 
--->
-					<div>
-					</div>
-<div>
-					<a href="Rohit%20Bangal%20-%20Resume.pdf" target="_blank" rel="noopener">
-						<button class="btn" align="center" >
-							<i class="fa fa-download"></i> Resume
-						</button>
-					</a>
-				</div>
                 </div>
               </div>
               <div class="col-md-6">
@@ -187,19 +284,25 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
                       About me
                     </h5>
                   </div>
-		  	<p class="lead">
-				<li>🔌 Electrical & Computer Engineer building autonomous and robotic systems hardware, with hands-on ownership of high-speed mixed-signal PCB design, board bring-up, and system integration</li>
-
-				<li>💼 Currently working on production autonomous hardware systems, delivering reliable, scalable solutions under real-world constraints</li>
-				
-				<li>🎓 MS Electrical and Computer, Carnegie Mellon University | BE Instrumentation and Control, Savitribai Phule Pune University</li>
-
-				<li>🔧 Proven project manager, adept at reducing costs &amp; time</li>
-
-				<li> 🤖 Conference-published engineer and international robotics competition team lead, known for execution, ownership, and impact</li>
-
-				<li>📚 Lifelong learner, passionate about making an impact</li>
-			</p>
+                  <div class="lead">
+                    <ul style="list-style-type: none; padding-left: 0;">
+                      <li class="mb-2">🔌 Electrical &amp; Computer Engineer building autonomous and robotic systems hardware, with hands-on ownership of high-speed mixed-signal PCB design, board bring-up, and system integration</li>
+                      <li class="mb-2">💼 Currently working on production autonomous hardware systems, delivering reliable, scalable solutions under real-world constraints</li>
+                      <li class="mb-2">🎓 MS Electrical and Computer, Carnegie Mellon University | BE Instrumentation and Control, Savitribai Phule Pune University</li>
+                      <li class="mb-2">🔧 Proven project manager, adept at reducing costs &amp; time</li>
+                      <li class="mb-2">🤖 Conference-published engineer and international robotics competition team lead, known for execution, ownership, and impact</li>
+                      <li class="mb-2">📚 Lifelong learner, passionate about making an impact</li>
+                    </ul>
+                  </div>
+                  <div class="pt-3">
+                    <a href="Rohit%20Bangal%20-%20Resume.pdf" target="_blank" rel="noopener">
+                      <button class="btn">
+                        <i class="fa fa-download"></i> Resume
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
 <!--                   <p class="lead">
                     I have always been a keen enthusiast of Technology, Robotics, and Automation. I have always tried to be good at these fields throughout my engineering. I solve problems in creative ways. At Government College of Engineering and Research, where I have completed my graduation in Instrumentation and Control Engineering, I have learned the importance of applying classical strategies and engineering concepts to modern-day projects. I have always learned everything with sincerity and concentration. This approach has always helped me give my best at everything I do.
                   </p>
@@ -496,7 +599,26 @@ USB-C PD, Python scripting for validation tools, automated test workflows, and l
           </div>
 		</a>
         </div>
-      </div>   
+      </div>
+      <div class="col-sm-12">
+				<div class="title-box text-center">
+					<h1 class="title-h1">PEER REVIEWS & EDITORIAL SERVICE</h1></div>
+			</div>
+	    <div class="row">
+        <div class="col-md-12">
+			  <div class="service-box">
+				<div class="service-ico">
+				  <span class="ico-circle"><ion-icon name="create-outline"></ion-icon></span>
+				</div>
+				<div class="service-content">
+				  <h2 class="s-title">IEEE Transactions on Robot Learning (IEEE T-RL)</h2>
+				  <p class="s-description text-center">
+					<b>Peer Reviewer</b> — Invited reviewer evaluating manuscripts in robotics, motion planning, and learning systems (June 2026).
+				  </p>
+				</div>
+			  </div>
+			</div>
+		</div>
 		<div class="col-sm-12">
 				<div class="title-box text-center">
 					<h1 class="title-h1">AWARDS</h1></div>
