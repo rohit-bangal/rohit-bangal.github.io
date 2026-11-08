@@ -2,1467 +2,996 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rohit Bangal</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <title>Rohit Bangal — Electrical &amp; Robotics Hardware Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Rohit Bangal — Electrical &amp; Computer Engineer (MS ECE, Carnegie Mellon) designing high-speed mixed-signal PCBs, vision subsystems, and autonomous robotics hardware.">
+  <meta name="keywords" content="Rohit Bangal, Electrical Engineer, Robotics Hardware, Carnegie Mellon ECE, Matic Robots, Monarch Tractor, High-Speed PCB, MIPI-CSI, GMSL">
+
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <style>
-    /* Clean Light Mode Background with Subtle Grid & Soft Ambient Glow */
-    body {
-      background-color: #0b0c10 !important;
-      color: #334155 !important;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
-    
-    .circuit-bg {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -2;
-      background-color: transparent;
-      background-image: 
-        radial-gradient(circle at 0px 0px, rgba(2, 132, 199, 0.12) 2px, transparent 3px),
-        radial-gradient(circle at 25px 25px, rgba(0, 120, 255, 0.08) 2px, transparent 3px),
-        linear-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
-      background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
-      background-position: 0 0, 0 0, 0 0, 0 0;
-      animation: moveCircuitGrid 25s linear infinite;
-      pointer-events: none;
-    }
-    .circuit-glow {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -1;
-      background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    @keyframes moveCircuitGrid {
-      0% { background-position: 0 0; }
-      100% { background-position: 50px 50px; }
-    }
 
-    /* Ultra-Clean Light Glass Cards with Corner Clipping */
-    .box-shadow-full,
-    .service-box,
-    .work-box,
-    .card-blog,
-    .counter-box {
-      background: rgba(255, 255, 255, 0.88) !important;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(226, 232, 240, 0.9) !important;
-      border-radius: 20px !important;
-      overflow: hidden !important;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
+  <!-- Editorial + Technical Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .work-img,
-    .card-img {
-      border-top-left-radius: 20px !important;
-      border-top-right-radius: 20px !important;
-      overflow: hidden !important;
-    }
-
-    .work-img img,
-    .card-img img,
-    .service-box img {
-      border-radius: inherit;
-    }
-    
-    .box-shadow-full:hover,
-    .service-box:hover,
-    .work-box:hover,
-    .card-blog:hover {
-      transform: translateY(-6px) scale(1.005) !important;
-      border-color: rgba(2, 132, 199, 0.35) !important;
-      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.12), 0 0 20px rgba(2, 132, 199, 0.08) !important;
-    }
-
-    /* Headings & Text Colors */
-    section h1, section h2, section h3, section h4, section h5, section h6, .s-title, .title-left, .title-s, .w-title {
-      color: #0f172a !important;
-    }
-    
-    /* Hero Intro Section Visibility Fixes */
-    #home h1.intro-title {
-      color: #ffffff !important;
-      -webkit-text-fill-color: #ffffff !important;
-      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7) !important;
-      font-weight: 800 !important;
-    }
-    #home h2 {
-      color: #38bdf8 !important;
-      -webkit-text-fill-color: #38bdf8 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
-      font-weight: 600 !important;
-    }
-    .overlay-itro {
-      background-color: rgba(11, 15, 25, 0.65) !important;
-    }
-    
-    .title-box {
-      margin-bottom: 3rem !important;
-      text-align: center !important;
-    }
-
-    .title-a, .title-h1 {
-      color: #ffffff !important;
-      -webkit-text-fill-color: #ffffff !important;
-      background: none !important;
-      font-weight: 800 !important;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.9) !important;
-      text-transform: uppercase !important;
-    }
-    
-    .subtitle-a {
-      color: #ffffff !important;
-      -webkit-text-fill-color: #ffffff !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-    }
-
-    .line-mf {
-      background: linear-gradient(90deg, #0284c7, #0078ff) !important;
-      height: 4px !important;
-      width: 70px !important;
-      border-radius: 4px !important;
-      margin: 10px auto 0 auto !important;
-    }
-
-    .lead, p, span, li {
-      color: #475569 !important;
-    }
-    
-    .about-info p span, .s-description, .lead li b {
-      color: #1e293b !important;
-    }
-
-    /* Modern Light Fluid Buttons */
-    .button-rouded, .button1, .btn {
-      background: linear-gradient(135deg, #ffffff, #f0f9ff) !important;
-      border: 1px solid rgba(2, 132, 199, 0.35) !important;
-      color: #0284c7 !important;
-      border-radius: 30px !important;
-      padding: 10px 24px !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.3px;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08) !important;
-      transition: all 0.3s ease !important;
-    }
-    
-    .button-rouded:hover, .button1:hover, .btn:hover {
-      background: linear-gradient(135deg, #0284c7, #0078ff) !important;
-      color: #ffffff !important;
-      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.25) !important;
-      transform: translateY(-2px);
-    }
-
-    /* Icon Circles */
-    .ico-circle {
-      border: 2px solid rgba(2, 132, 199, 0.3) !important;
-      background: rgba(2, 132, 199, 0.06) !important;
-      box-shadow: 0 0 15px rgba(2, 132, 199, 0.1) !important;
-      color: #0284c7 !important;
-    }
-
-    /* Badge Pills & Links */
-    .badge-pill-tech {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 18px;
-      margin: 4px;
-      border-radius: 20px;
-      background: rgba(2, 132, 199, 0.08);
-      border: 1px solid rgba(2, 132, 199, 0.25);
-      color: #0284c7 !important;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none !important;
-    }
-    .badge-pill-tech:hover {
-      background: #0284c7;
-      color: #ffffff !important;
-      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
-      transform: translateY(-2px);
-    }
-
-    /* Light Theme Nav Bar */
-    .navbar-b.navbar-trans .nav-link {
-      color: #ffffff !important;
-      font-weight: 600 !important;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
-    }
-    .navbar-b.navbar-reduce {
-      background-color: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-    }
-    .navbar-b.navbar-reduce .nav-link {
-      color: #1e293b !important;
-      text-shadow: none !important;
-    }
-    .navbar-b.navbar-reduce .nav-link:hover, .navbar-b.navbar-reduce .nav-link.active {
-      color: #0284c7 !important;
-    }
-  </style>
+  <!-- Bespoke Design System -->
+  <link href="css/bespoke.css?v=6" rel="stylesheet">
 </head>
 
-<body id="page-top">
-  <!-- Cool Full-Screen Background Video -->
-  <video autoplay loop muted playsinline id="bg-video" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -10; opacity: 0.9; filter: brightness(0.95);">
-    <source src="img/bg_vdo.mp4" type="video/mp4">
-  </video>
-  <!-- Circuit Background Elements -->
-  <div class="circuit-bg"></div>
-  <div class="circuit-glow"></div>
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top"></a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+<body data-theme="dark">
+  <!-- Hairline Top Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Subtle Top Radial Backlight + Architectural Dot Matrix -->
+  <div class="ambient-canvas"></div>
+
+  <!-- Floating Glass Pill Dock -->
+  <header class="dock-header">
+    <nav class="dock-nav" aria-label="Primary Navigation">
+      <a href="#about" class="dock-monogram" title="Rohit Bangal">RB</a>
+      <a href="#about" class="dock-link active">About</a>
+      <a href="#journey" class="dock-link">Journey</a>
+      <a href="#research" class="dock-link">Research &amp; Honors</a>
+      <a href="#projects" class="dock-link">Projects</a>
+      <a href="#courses" class="dock-link">Courses</a>
+      <a href="#contact" class="dock-link">Contact</a>
+      <span class="dock-divider"></span>
+      <button type="button" id="theme-toggle" class="dock-theme-btn" aria-label="Switch color theme">
+        <span id="theme-toggle-icon">☀</span>
+        <span id="theme-toggle-label">Light Mode</span>
       </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll active" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">About</a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link js-scroll" href="#journey">Journey</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#service">Accomplishments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#work">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#blog">Courses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.png)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h1 class="intro-title mb-4">I am Rohit Bangal</h1>
-			<h2 style="color: white">Electrical Engineer | MS ECE, Carnegie Mellon | Robotics</h2>
-           <!--<p class="intro-subtitle"><span class="text-slider-items">Bachelor of Engineering - Instrumentation and Control, Enthusiast of Technology and Robotics</span><strong class="text-slider"></strong></p>
-          <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         ABOUT & PERSONAL BENTO OVERVIEW
+         ====================================================================== -->
+    <section id="about" class="hero-section">
+      <div class="shell">
+        <!-- Personal Modular Bento Grid (Marco.fyi Bento-First Opening) -->
+        <div class="bento-grid reveal">
+          <!-- Tile 1: Personal Profile & Affiliations (5 cols) -->
+          <div class="bento-card identity-card span-5">
+            <div>
+              <div class="bento-label">
+                <span>ABOUT ME</span>
+                <span>SAN JOSE, CA</span>
+              </div>
+              <div class="identity-top-flex">
+                <div class="portrait-frame">
+                  <img src="img/rb.jpg" alt="Rohit Prashant Bangal">
+                </div>
+                <div>
+                  <h1 class="identity-name">Rohit Prashant Bangal</h1>
+                  <div class="identity-role" style="margin-bottom: 0;">Electrical &amp; Computer Engineer<br><span style="font-size: 0.8rem; color: var(--text-muted);">Robotics, Embedded &amp; Power Hardware</span></div>
+                </div>
+              </div>
+
+              <p class="identity-bio">
+                I design mixed-signal PCBs, high-speed vision and compute subsystems, and power architectures from schematic capture through lab bring-up and launch.
+              </p>
+              <p class="identity-bio" style="margin-bottom: 14px;">
+                With an M.S. in ECE from <strong>Carnegie Mellon University</strong>, published <strong>IEEE</strong> robotics research, and hands-on ownership across autonomous robots and electric vehicles, I focus on clean hardware architecture and reliable real-world systems.
+              </p>
+
+              <div class="now-mini-list">
+                <div class="now-mini-row">
+                  <span class="k">Currently</span>
+                  <span class="v"><a href="https://maticrobots.com/" target="_blank" rel="noopener">Matic Robots &nearr;</a> &middot; Mountain View</span>
+                </div>
+                <div class="now-mini-row">
+                  <span class="k">Previously</span>
+                  <span class="v"><a href="https://www.monarchtractor.com/" target="_blank" rel="noopener">Monarch Tractor &nearr;</a> &middot; Livermore</span>
+                </div>
+                <div class="now-mini-row">
+                  <span class="k">Education</span>
+                  <span class="v"><a href="https://www.ece.cmu.edu/" target="_blank" rel="noopener">Carnegie Mellon &nearr;</a> &middot; MS ECE</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-pill-row">
+              <a href="Rohit%20Bangal%20-%20Resume.pdf" target="_blank" rel="noopener" class="mini-pill mini-pill-solid">Resume &nearr;</a>
+              <a href="https://www.linkedin.com/in/rohitbangal" target="_blank" rel="noopener" class="mini-pill">LinkedIn &nearr;</a>
+              <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" rel="noopener" class="mini-pill">ORCID &nearr;</a>
+              <a href="https://www.semanticscholar.org/author/Rohit-Bangal/2213702117" target="_blank" rel="noopener" class="mini-pill">Scholar &nearr;</a>
+              <button type="button" class="mini-pill" data-copy-email="rohitbangal.rb@gmail.com" data-copied-label="Copied &check;">
+                <span class="copy-label">Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tile 2: All Skills at a Glance (7 cols) -->
+          <div class="bento-card skills-card span-7">
+            <div class="bento-label">
+              <span>SKILLS &amp; HARDWARE CRAFT</span>
+              <span>FULL STACK AT A GLANCE</span>
+            </div>
+
+            <div class="skills-glance-grid">
+              <div class="skill-pillar">
+                <div class="skill-pillar-head">
+                  <span>Hardware &amp; Power</span>
+                  <span class="num">01</span>
+                </div>
+                <div class="chip-cloud">
+                  <span class="spec-chip">High-Speed PCB</span>
+                  <span class="spec-chip">Mixed-Signal</span>
+                  <span class="spec-chip">SoCs &amp; ARM/STM32/AVR</span>
+                  <span class="spec-chip">PMICs &amp; DC-DC</span>
+                  <span class="spec-chip">Rail Sequencing</span>
+                  <span class="spec-chip">ADC / DACs</span>
+                  <span class="spec-chip">BMS &amp; HV Packs</span>
+                </div>
+              </div>
+
+              <div class="skill-pillar">
+                <div class="skill-pillar-head">
+                  <span>Interfaces &amp; Buses</span>
+                  <span class="num">02</span>
+                </div>
+                <div class="chip-cloud">
+                  <span class="spec-chip">MIPI-CSI2</span>
+                  <span class="spec-chip">GMSL / SerDes</span>
+                  <span class="spec-chip">USB-C PD</span>
+                  <span class="spec-chip">CAN Bus</span>
+                  <span class="spec-chip">SPI &amp; I2C</span>
+                  <span class="spec-chip">UART</span>
+                  <span class="spec-chip">JTAG / SWD</span>
+                </div>
+              </div>
+
+              <div class="skill-pillar">
+                <div class="skill-pillar-head">
+                  <span>EDA &amp; Lab Bring-Up</span>
+                  <span class="num">03</span>
+                </div>
+                <div class="chip-cloud">
+                  <span class="spec-chip">Altium Designer</span>
+                  <span class="spec-chip">KiCAD</span>
+                  <span class="spec-chip">LTSpice</span>
+                  <span class="spec-chip">SI / PI Analysis</span>
+                  <span class="spec-chip">Oscilloscopes</span>
+                  <span class="spec-chip">Logic &amp; Bus Analyzers</span>
+                </div>
+              </div>
+
+              <div class="skill-pillar">
+                <div class="skill-pillar-head">
+                  <span>Software &amp; Control</span>
+                  <span class="num">04</span>
+                </div>
+                <div class="chip-cloud">
+                  <span class="spec-chip">Python Test Automation</span>
+                  <span class="spec-chip">Embedded C</span>
+                  <span class="spec-chip">Lab Data Pipelines</span>
+                  <span class="spec-chip">BLDC / PID / Odometry</span>
+                  <span class="spec-chip">PLC &amp; SCADA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Three Balanced Personal Highlight Tiles (4 + 4 + 4 = 12 cols) -->
+          <div class="bento-card span-4">
+            <div class="bento-label">
+              <span>GRADUATE PEDIGREE</span>
+              <span>CMU ECE</span>
+            </div>
+            <div class="metric-big">3.95<span class="accent">/4.0</span> QPA</div>
+            <p class="metric-desc">
+              M.S. in ECE at <strong>Carnegie Mellon University</strong>, Eta Kappa Nu (IEEE-HKN) Honor Society, CubeSat &amp; Space Robotics labs.
+            </p>
+          </div>
+
+          <div class="bento-card span-4">
+            <div class="bento-label">
+              <span>SCHOLARSHIP &amp; IP</span>
+              <span>IEEE + PATENT</span>
+            </div>
+            <div class="metric-big">3 <span class="accent">IEEE</span> + 1 Patent</div>
+            <p class="metric-desc">
+              Three peer-reviewed IEEE Xplore robotics papers, one published energy-harvesting patent, and invited <strong>IEEE T-RL</strong> reviewer.
+            </p>
+          </div>
+
+          <div class="bento-card span-4">
+            <div class="bento-label">
+              <span>EXECUTION &amp; HONORS</span>
+              <span>4+ YRS EXP</span>
+            </div>
+            <div class="metric-big">3<span class="accent">+</span> OEM &middot; AIR <span class="accent">1</span></div>
+            <p class="metric-desc">
+              Led 3+ OEM vehicle launches end-to-end, cut HV battery test time by 80%, and ranked All India #1 in National Engg. Olympiad.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         01 // EXPERIENCE & EDUCATION (MY JOURNEY)
+         ====================================================================== -->
+    <section id="journey" class="section-block">
+      <div class="shell">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-index">01 // MY JOURNEY</span>
+            <h2 class="section-title">Experience &amp; Education</h2>
+          </div>
+          <p class="section-lead">
+            From leading national competition robotics teams in Pune to graduate spacecraft hardware at Carnegie Mellon and autonomous robotics in Silicon Valley.
+          </p>
+        </div>
+
+        <div class="dim-ledger reveal">
+          <!-- Matic Robots -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Feb 2026 &ndash; Present</div>
+              <div>Mountain View, CA</div>
+              <span class="journey-badge-now">Current</span>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/matic.png" alt="Matic Robots"></div>
+                <div>
+                  <h3 class="journey-role">Electrical Design Engineer</h3>
+                  <div class="journey-org"><a href="https://maticrobots.com/" target="_blank" rel="noopener">Matic Robots &nearr;</a></div>
+                </div>
+              </div>
+              <p class="journey-scope">Designing end-to-end subsystem PCBs and driving hardware root-cause resolution for vision-first autonomous indoor robots.</p>
+              <ul class="journey-points">
+                <li><strong>End-to-End Subsystem PCBs:</strong> Own schematic capture, component selection, and high-speed layout for robotic boards integrating SoCs, MCUs, power regulation, and sensor interfaces.</li>
+                <li><strong>Root-Cause Troubleshooting:</strong> Diagnose complex electrical, signal-integrity, and EMI/ESD issues on robots to implement both rapid short-term mitigations and permanent rev-spin fixes.</li>
+                <li><strong>Bring-Up &amp; Validation:</strong> Partner across firmware, mechanical, and manufacturing teams during board bring-up, system integration, and lab qualification.</li>
+              </ul>
+              <div class="chip-cloud">
+                <span class="spec-chip">SoC &amp; MCU PCBs</span>
+                <span class="spec-chip">High-Speed Interfaces</span>
+                <span class="spec-chip">Root-Cause Debug</span>
+                <span class="spec-chip">Board Bring-Up</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monarch Tractor Full-Time -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Jun 2024 &ndash; Jan 2026</div>
+              <div>Livermore, CA</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/mt.png" alt="Monarch Tractor"></div>
+                <div>
+                  <h3 class="journey-role">Electrical Engineer</h3>
+                  <div class="journey-org"><a href="https://www.monarchtractor.com/" target="_blank" rel="noopener">Monarch Tractor &nearr;</a></div>
+                </div>
+              </div>
+              <p class="journey-scope">Owned ruggedized autonomous compute &amp; camera hardware and led electrical engineering across external OEM vehicle partnerships.</p>
+              <ul class="journey-points">
+                <li><strong>Compute &amp; Vision Subsystems:</strong> Designed and validated high-speed, multi-rail embedded compute boards featuring <strong>MIPI-CSI2 and GMSL</strong> camera pipelines, power delivery, and sensor interfaces.</li>
+                <li><strong>SI/PI &amp; Lab Validation:</strong> Executed first-silicon bring-up, SI/PI analysis, and protocol-level debug using high-bandwidth oscilloscopes, logic analyzers, and bus analyzers, backed by Python test automation.</li>
+                <li><strong>OEM Program Electrical Lead:</strong> Led electrical scope for <strong>3+ OEM partnership programs</strong> from concept to launch across autonomous compute, HV battery systems, OBC, and vehicle peripherals.</li>
+              </ul>
+              <div class="chip-cloud">
+                <span class="spec-chip">MIPI-CSI2 / GMSL</span>
+                <span class="spec-chip">Multi-Rail Compute</span>
+                <span class="spec-chip">SI/PI Verification</span>
+                <span class="spec-chip">HV Battery &amp; OBC</span>
+                <span class="spec-chip">Python Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monarch Tractor Intern -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Jun 2023 &ndash; Aug 2023</div>
+              <div>Livermore, CA</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/mt.png" alt="Monarch Tractor"></div>
+                <div>
+                  <h3 class="journey-role">HV Battery Electrical Systems Intern</h3>
+                  <div class="journey-org"><a href="https://www.monarchtractor.com/" target="_blank" rel="noopener">Monarch Tractor &nearr;</a></div>
+                </div>
+              </div>
+              <ul class="journey-points">
+                <li>Designed an automated <strong>Battery Module Tester</strong> to detect electrical and sensing defects in EV cell modules prior to high-voltage pack assembly — <strong>reducing inspection time by 80%</strong> and eliminating two manual operator stations.</li>
+              </ul>
+              <div class="chip-cloud">
+                <span class="spec-chip">HV Battery Systems</span>
+                <span class="spec-chip">Automated Test Equipment</span>
+                <span class="spec-chip">&minus;80% Inspection Time</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carnegie Mellon University -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Jan 2023 &ndash; May 2024</div>
+              <div>Pittsburgh, PA</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/cmu.png" alt="Carnegie Mellon University"></div>
+                <div>
+                  <h3 class="journey-role">M.S. in Electrical &amp; Computer Engineering</h3>
+                  <div class="journey-org"><a href="https://www.ece.cmu.edu/academics/ms-ece/applied-program.html" target="_blank" rel="noopener">Carnegie Mellon University &nearr;</a></div>
+                </div>
+              </div>
+              <ul class="journey-points">
+                <li><strong>QPA: 3.95 / 4.00</strong> (Applied ECE Program) &bull; Inducted into <strong>Eta Kappa Nu (IEEE-HKN)</strong> Honor Society.</li>
+                <li>Designed CubeSat flight control boards, BMS circuits, and camera payload interfaces; completed coursework in <em>CubeSat Design-Build-Fly Lab</em>, <em>Space Robotics</em>, and <em>Machine Learning for Signal Processing</em>.</li>
+              </ul>
+              <div class="chip-cloud">
+                <span class="spec-chip">CubeSat Avionics</span>
+                <span class="spec-chip">Space Robotics</span>
+                <span class="spec-chip">IEEE-HKN Honor Society</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tantradnyan Engineers -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Apr 2020 &ndash; Nov 2022</div>
+              <div>Ahmednagar, India</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/te.png" alt="Tantradnyan Engineers"></div>
+                <div>
+                  <h3 class="journey-role">Project Engineer</h3>
+                  <div class="journey-org"><a href="https://www.tantraengineers.com/" target="_blank" rel="noopener">Tantradnyan Engineers &nearr;</a></div>
+                </div>
+              </div>
+              <ul class="journey-points">
+                <li>Led a 3-member team designing control &amp; power wiring schematics, PLC/HMI automation panels, and custom test benches — <strong>cutting production time by 20%</strong> through workflow optimization.</li>
+              </ul>
+              <div class="chip-cloud">
+                <span class="spec-chip">Control &amp; Power Schematics</span>
+                <span class="spec-chip">Siemens / Delta PLC</span>
+                <span class="spec-chip">Industrial Test Benches</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Robotics Research Lab -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Aug 2018 &ndash; Jun 2020</div>
+              <div>Pune, India</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/penrose.png" alt="Robotics Research Lab"></div>
+                <div>
+                  <h3 class="journey-role">Team Leader &mdash; Robotics Research Lab</h3>
+                  <div class="journey-org"><a href="https://rrlgcoeara.in/" target="_blank" rel="noopener">GCOEARA Robotics Lab &nearr;</a></div>
+                </div>
+              </div>
+              <ul class="journey-points">
+                <li>Led a <strong>35-member multidisciplinary robotics team</strong> for the ABU Asia-Pacific Robot Contest and Mitsubishi Electric Cup, boosting team productivity by 20% and winning the <strong>Special Jury Award</strong> among 80 teams in 2019.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- B.E. GCOEARA / SPPU -->
+          <div class="ledger-row journey-row-grid">
+            <div class="journey-when">
+              <div>Aug 2016 &ndash; Apr 2020</div>
+              <div>Pune, India</div>
+            </div>
+            <div>
+              <div class="journey-header">
+                <div class="logo-tile"><img src="img/gcoeara.png" alt="GCOEARA SPPU"></div>
+                <div>
+                  <h3 class="journey-role">B.E. in Instrumentation &amp; Control Engineering</h3>
+                  <div class="journey-org">Government College of Engineering &amp; Research, Savitribai Phule Pune University</div>
+                </div>
+              </div>
+              <ul class="journey-points">
+                <li>Graduated First Class with Distinction (<strong>GPA: 8.83 / 10.00</strong>), building core foundations in feedback control, sensor instrumentation, power electronics, and embedded mechatronics.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         02 // PATENT, IEEE PUBLICATIONS, PEER REVIEW & HONORS
+         ====================================================================== -->
+    <section id="research" class="section-block">
+      <div class="shell">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-index">02 // ACCOMPLISHMENTS &amp; SCHOLARSHIP</span>
+            <h2 class="section-title">Publications, Patent &amp; Honors</h2>
+          </div>
+          <p class="section-lead">
+            Published energy-harvesting patent, peer-reviewed IEEE robotics papers, journal peer-review service, and national engineering awards.
+          </p>
+        </div>
+
+        <!-- Patent -->
+        <div class="research-subhead reveal">PATENT</div>
+        <div class="dim-ledger reveal">
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">
+              <div>May 24, 2019</div>
+              <div>IP India #201721041912</div>
+            </div>
+            <div>
+              <div class="archive-title">Portable, Human-Powered Electrical Energy Source</div>
+              <p class="archive-summary">
+                <strong>Published Patent:</strong> Compact electromechanical energy-harvesting and power-conditioning assembly converting biomechanical input into regulated DC power for off-grid and emergency portable electronics.
+              </p>
+            </div>
+            <div><span class="spec-chip">Patent</span></div>
+          </div>
+        </div>
+
+        <!-- IEEE Publications & Editorial Peer Review -->
+        <div class="research-subhead reveal">IEEE PUBLICATIONS &amp; EDITORIAL PEER REVIEW</div>
+        <div class="dim-ledger reveal">
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">
+              <div>Apr 20, 2023</div>
+              <div>IEEE Xplore</div>
+            </div>
+            <div>
+              <div class="archive-title">Design and Control of Omnidirectional Conveyor Model Using Image Processing</div>
+              <p class="archive-summary">
+                Modular material-handling surface pairing overhead computer-vision object tracking with real-time multi-actuator vector velocity control for 2D sorting.
+              </p>
+            </div>
+            <div>
+              <a href="https://ieeexplore.ieee.org/document/10104684" target="_blank" rel="noopener" class="mini-pill">Read Paper &nearr;</a>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">
+              <div>Jun 2, 2020</div>
+              <div>IEEE Xplore</div>
+            </div>
+            <div>
+              <div class="archive-title">Design and Control of Quadruped Robot with Machine Vision based Path Planning</div>
+              <p class="archive-summary">
+                Electromechanical leg design, inverse kinematics, BLDC/ODrive closed-loop actuation, IMU stabilization, and vision-based navigation over 15&deg; slopes and steps.
+              </p>
+            </div>
+            <div>
+              <a href="https://ieeexplore.ieee.org/document/9105783" target="_blank" rel="noopener" class="mini-pill">Read Paper &nearr;</a>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">
+              <div>Dec 26, 2019</div>
+              <div>IEEE Xplore</div>
+            </div>
+            <div>
+              <div class="archive-title">Path Planning and Controlling of Omni-Directional Robot Using Cartesian Odometry and PID Algorithm</div>
+              <p class="archive-summary">
+                Autonomous trajectory tracking for holonomic mobile robots combining quadrature rotary encoder dead-reckoning in Cartesian coordinates with tuned multi-axis PID loops.
+              </p>
+            </div>
+            <div>
+              <a href="https://ieeexplore.ieee.org/document/8940566" target="_blank" rel="noopener" class="mini-pill">Read Paper &nearr;</a>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">
+              <div>June 2026</div>
+              <div>Peer Reviewer</div>
+            </div>
+            <div>
+              <div class="archive-title">IEEE Transactions on Robot Learning (IEEE T-RL)</div>
+              <p class="archive-summary">
+                <strong>Editorial &amp; Peer Review Service:</strong> Invited technical reviewer evaluating manuscripts in robotics hardware-software co-design, motion planning, and learning-enabled control systems.
+              </p>
+            </div>
+            <div><span class="spec-chip">IEEE T-RL</span></div>
+          </div>
+        </div>
+
+        <!-- National Honors -->
+        <div class="research-subhead reveal">AWARDS</div>
+        <div class="dim-ledger reveal">
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">Jun 15, 2019</div>
+            <div>
+              <div class="archive-title">Special Jury Award &mdash; ABU DD Robocon 2019</div>
+              <p class="archive-summary">Honored as Team Leader among 80 participating engineering institutions nationwide at IIT Delhi.</p>
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/rc_cert/Robocon 2019.jpg" data-media-title="Special Jury Award — ABU DD Robocon 2019" data-media-caption="Awarded to Team Leader Rohit Bangal among 80 teams.">Certificate &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">Jun 2018</div>
+            <div>
+              <div class="archive-title">All India Rank 1 &mdash; National Engineering Olympiad</div>
+              <p class="archive-summary">Secured 1st Rank nationwide based on quantitative analytical and technical engineering aptitude.</p>
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/Engg Olympiad Certificate_r.jpg" data-media-title="All India Rank 1 — National Engineering Olympiad" data-media-caption="Secured All India Rank 1 nationwide.">Certificate &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">Feb 15, 2019</div>
+            <div>
+              <div class="archive-title">Commendable Performance Award &mdash; Mitsubishi Electric Cup</div>
+              <p class="archive-summary">Awarded as Team Leader for intelligent PLC/HMI &amp; IoT Building Energy Management System.</p>
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/Mitsubishi Cup Commendable.jpg" data-media-title="Commendable Performance Award — Mitsubishi Electric Cup" data-media-caption="National factory automation award.">Certificate &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row pub-row-grid">
+            <div class="journey-when">Mar 5, 2018</div>
+            <div>
+              <div class="archive-title">Smart &amp; Simple Robot Award &mdash; DD Robocon</div>
+              <p class="archive-summary">Recognized for clean embedded electronics design and reliable pneumatic/mechatronic execution.</p>
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/rc_cert/Robocon 2018 Robu.in.jpg" data-media-title="Smart &amp; Simple Robot Award — DD Robocon 2018" data-media-caption="Electronics designing and programming.">Certificate &nearr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         03 // PROJECTS (HARDWARE, ROBOTICS & AUTOMATION)
+         ====================================================================== -->
+    <section id="projects" class="section-block">
+      <div class="shell">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-index">03 // ENGINEERING WORK</span>
+            <h2 class="section-title">Selected Projects</h2>
+          </div>
+          <p class="section-lead">
+            Hands-on robots, spacecraft &amp; battery electronics, smart-grid systems, and industrial automation builds — with videos, schematics, and engineering diagrams.
+          </p>
+        </div>
+
+        <div class="archive-filter-row reveal">
+          <button type="button" class="archive-pill active" data-archive-filter="all">All Projects</button>
+          <button type="button" class="archive-pill" data-archive-filter="robotics">Robotics &amp; Vision</button>
+          <button type="button" class="archive-pill" data-archive-filter="hardware">Embedded &amp; Battery Hardware</button>
+          <button type="button" class="archive-pill" data-archive-filter="plc">Industrial Automation &amp; Grid</button>
+        </div>
+
+        <!-- Featured Visual Project Grid (6 Highlight Projects) -->
+        <div class="projects-grid reveal">
+          <!-- 1. Smart HV Battery Module Tester -->
+          <article class="project-tile" data-cat="hardware plc">
+            <div class="project-visual" data-gallery="battery_tester" title="View Rev 3 PCB &amp; Touchscreen UI">
+              <img src="img/battery_tester/pcb_rev3.jpg" alt="Smart Battery Module Tester Rev 3 PCB">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>MONARCH TRACTOR</span>
+                <span class="highlight">&minus;80% Inspection Time</span>
+              </div>
+              <h3 class="project-name">Smart HV Battery Module Defect Tester</h3>
+              <p class="project-desc">
+                Designed a custom <strong>Rev 3 mixed-signal PCB</strong> (TI battery monitor AFE, isolated DC-DC, RA8875 TFT touch UI, USB-C) and 3D-printed handheld enclosure that screens EV cell voltages, <strong>F1&ndash;F5 fuses, and NTC thermistors</strong> with QR diagnostic output prior to HV pack assembly — <strong>cutting inspection time by 80%</strong>.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-gallery="battery_tester">PCB &amp; UI Photos (2) &nearr;</button>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Custom PCB &middot; HV QA</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. CMU 1U CubeSat Avionics, BMS & Camera Payload -->
+          <article class="project-tile" data-cat="hardware robotics">
+            <div class="project-visual" data-media-src="img/cubesat.jpg" data-media-title="1U CubeSat — Flight Control, BMS &amp; Camera Payload" data-media-caption="Assembled 1U CubeSat stack at Carnegie Mellon featuring custom flight control PCBs, 18650 Li-ion BMS deck, copper shielding, optical camera module, solar cells, and tape-spring antennas." title="Inspect 1U CubeSat Hardware">
+              <img src="img/cubesat.jpg" alt="1U CubeSat Hardware Stack at Carnegie Mellon" style="object-position: center 58%;">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>CARNEGIE MELLON UNIVERSITY</span>
+                <span class="highlight">1U Spacecraft Stack</span>
+              </div>
+              <h3 class="project-name">1U CubeSat Control Boards, BMS &amp; Camera Payload</h3>
+              <p class="project-desc">
+                Engineered stackable nanosatellite flight control PCBs, multi-cell <strong>18650 Li-ion Battery Management System (BMS)</strong> protection/telemetry hardware, and side-mounted optical camera interface electronics in CMU’s CubeSat Design-Build-Fly Lab.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-media-src="img/cubesat.jpg" data-media-title="1U CubeSat — Flight Control, BMS &amp; Camera Payload" data-media-caption="Assembled 1U CubeSat stack at Carnegie Mellon featuring custom flight control PCBs, 18650 Li-ion BMS deck, copper shielding, optical camera module, solar cells, and tape-spring antennas.">Inspect Spacecraft &nearr;</button>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Avionics &middot; BMS &middot; Optics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Autonomous Quadruped Robot -->
+          <article class="project-tile" data-cat="robotics hardware">
+            <div class="project-visual" data-gallery="quadru_diagrams" title="View 7 diagrams &amp; photos">
+              <img src="img/quadru/quadru.jpg" alt="Autonomous Quadruped Robot">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>ABU ROBOCON 2019</span>
+                <span class="highlight">IEEE Published</span>
+              </div>
+              <h3 class="project-name">Autonomous Vision-Guided Quadruped Robot</h3>
+              <p class="project-desc">
+                Designed leg linkage mechanics, control electronics, and closed-loop locomotion for a four-legged walking robot using <strong>Raspberry Pi vision path planning, IMU stabilization, and BLDC motors with ODrive controllers</strong> to climb 15&deg; slopes and step hurdles.
+              </p>
+              <div class="project-bottom">
+                <div class="social-pill-row">
+                  <button type="button" class="mini-pill" data-media-src="img/quadru/MR2.mp4" data-media-title="Quadruped Robot — Autonomous Gait Video" data-media-caption="Closed-loop BLDC/ODrive walking &amp; obstacle run.">&#9654; Video</button>
+                  <button type="button" class="mini-pill" data-gallery="quadru_diagrams">Diagrams (7)</button>
+                </div>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">RPi &middot; BLDC &middot; IMU</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Coordinate-Guided Pick & Place AGV -->
+          <article class="project-tile" data-cat="robotics">
+            <div class="project-visual" data-gallery="mahindra_docs" title="View AGV photos &amp; schematic">
+              <img src="img/mahindra/snap.png" alt="Pick and Place AGV">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>MAHINDRA &amp; MAHINDRA PLANT</span>
+                <span class="highlight">Autonomous AGV</span>
+              </div>
+              <h3 class="project-name">Coordinate-Guided Pick &amp; Place AGV</h3>
+              <p class="project-desc">
+                Built an infrastructure-free factory AGV navigating `(X, Y)` plant coordinates via <strong>high-resolution quadrature encoders and IMU feedback</strong>, paired with a custom linear-actuator pick-and-place arm.
+              </p>
+              <div class="project-bottom">
+                <div class="social-pill-row">
+                  <button type="button" class="mini-pill" data-media-src="img/mahindra/run.mp4" data-media-title="Pick &amp; Place AGV — Autonomous Waypoint Run" data-media-caption="Encoder + IMU coordinate navigation and payload transfer.">&#9654; Video</button>
+                  <button type="button" class="mini-pill" data-gallery="mahindra_docs">Schematic &amp; Docs</button>
+                </div>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Encoders &middot; IMU</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Cloud-Connected Smart Grid -->
+          <article class="project-tile" data-cat="plc">
+            <div class="project-visual" data-gallery="smart_grid_report" title="Read 14-page Smart Grid report">
+              <img src="img/sg_report/concept.jpg" alt="Smart Grid Project">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>B.E. CAPSTONE PROJECT</span>
+                <span class="highlight">PLC + Cloud IoT</span>
+              </div>
+              <h3 class="project-name">Cloud-Connected Smart Grid &amp; SCADA System</h3>
+              <p class="project-desc">
+                Bridged an industrial <strong>Allen-Bradley PLC and SCADA</strong> substation controller with NodeMCU gateways and <strong>Google Firebase</strong> to enable real-time remote load control and fault monitoring via web and Android.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-gallery="smart_grid_report">14-Page Report &nearr;</button>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Allen-Bradley &middot; Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Rugby Pick-Place & Kick Robots -->
+          <article class="project-tile" data-cat="robotics">
+            <div class="project-visual" data-gallery="rugby_gallery" title="View robot gallery">
+              <img src="img/rc_20/3.jpg" alt="Rugby Ball Robots">
+            </div>
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>ABU ROBOCON 2020</span>
+                <span class="highlight">Dual-Robot System</span>
+              </div>
+              <h3 class="project-name">Rugby Ball Pick-Place &amp; Pneumatic Kick Robots</h3>
+              <p class="project-desc">
+                Designed and validated holonomic drive electronics, pneumatic ball-handling grippers, and a high-impulse solenoid kicking mechanism stabilized via IMU heading feedback.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-gallery="rugby_gallery">Robot Photos (3) &nearr;</button>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Pneumatics &middot; IMU</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Additional Industrial & Academic Projects Ledger -->
+        <div class="research-subhead reveal">MORE INDUSTRIAL &amp; MECHATRONIC PROJECTS</div>
+        <div class="dim-ledger reveal">
+          <div class="ledger-row archive-row-grid" data-cat="plc">
+            <div class="archive-thumb"><img src="img/jubi.jpeg" alt="Wireless PLC Link"></div>
+            <div>
+              <div class="archive-title">Wireless PLC-to-PLC Communication via Dish Antennas</div>
+              <div class="archive-org">Tantradnyan Engineers &bull; Delta PLC &amp; HMI, Ubiquiti</div>
+            </div>
+            <div class="archive-summary">
+              Point-to-point Ubiquiti RF transceivers linking central control room and remote plant PLCs without trenching cable, complete with alarm logging and access control.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/jubi.jpeg" data-media-title="Wireless PLC Communication via Dish Antennas" data-media-caption="Delta PLC/HMI and Ubiquiti directional RF link.">Photo &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="plc">
+            <div class="archive-thumb"><img src="img/graph_1.png" alt="Siemens S7 VB.NET"></div>
+            <div>
+              <div class="archive-title">VB.NET Graphing &amp; Control Software for Siemens S7 PLC</div>
+              <div class="archive-org">Tantradnyan Engineers &bull; TIA Portal, Visual Studio</div>
+            </div>
+            <div class="archive-summary">
+              Custom Visual Studio VB.NET interface for real-time process waveform plotting and control integrated directly with Siemens S7 PLCs.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-gallery="siemens_vb">Screens (2) &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="plc">
+            <div class="archive-thumb"><img src="img/lt.jpeg" alt="Switchgear Test Bench"></div>
+            <div>
+              <div class="archive-title">Automated Switchgear Thermal Test Bench</div>
+              <div class="archive-org">Tantradnyan Engineers &bull; Selec PLC</div>
+            </div>
+            <div class="archive-summary">
+              Automated high-current test bench characterizing temperature rise across industrial switchgear under stepped load profiles.
+            </div>
+            <div class="social-pill-row">
+              <button type="button" class="mini-pill" data-media-src="img/lt.jpeg" data-media-title="Switchgear Thermal Test Bench" data-media-caption="Automated variable-current switchgear test bench.">Photo &nearr;</button>
+              <button type="button" class="mini-pill" data-media-src="img/te_pr.PNG" data-media-title="Tantradnyan Engineers — Additional Work Projects" data-media-caption="Summary of industrial automation projects completed.">More TE &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="plc">
+            <div class="archive-thumb"><img src="img/pyro.jpg" alt="Pyrometer Tinning"></div>
+            <div>
+              <div class="archive-title">Busbar Tinning Automation Using IR Pyrometer</div>
+              <div class="archive-org">Tantradnyan Engineers &bull; Selec PLC &amp; HMI, Raytek Pyrometer</div>
+            </div>
+            <div class="archive-summary">
+              Non-contact Raytek optical pyrometer and PLC control loop holding copper busbars at optimal tinning temperature.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/pyro.jpg" data-media-title="Busbar Tinning Automation Using IR Pyrometer" data-media-caption="Non-contact temperature sensing with Raytek pyrometer.">Photo &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="plc">
+            <div class="archive-thumb"><img src="img/mitsu/1_sm.jpg" alt="Building Energy Management"></div>
+            <div>
+              <div class="archive-title">Calendar-Based Building Energy Management System</div>
+              <div class="archive-org">Mitsubishi Electric Cup &bull; Mitsubishi PLC &amp; HMI, NodeMCU, MQTT</div>
+            </div>
+            <div class="archive-summary">
+              Schedule-driven HVAC and lighting automation cutting facility energy consumption by 10%.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-gallery="mitsu_bems">Photos (2) &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="hardware plc">
+            <div class="archive-thumb"><img src="img/mini_project/1.png" alt="Smart Street"></div>
+            <div>
+              <div class="archive-title">Smart Street Lighting &amp; Speed-Adaptive Control</div>
+              <div class="archive-org">GCOEARA &bull; Arduino, IR Sensors, CATIA, Proteus</div>
+            </div>
+            <div class="archive-summary">
+              Decreased lighting energy usage up to 50% alongside a vehicle speed-based retracting speed breaker.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/mini_project/2.png" data-media-title="Smart Street — CATIA Model &amp; Electronics" data-media-caption="Modelled in CATIA and simulated in Proteus.">CAD &nearr;</button>
+            </div>
+          </div>
+
+          <div class="ledger-row archive-row-grid" data-cat="robotics">
+            <div class="archive-thumb"><img src="img/rb_2017_sm.png" alt="Disc Throwing Robot"></div>
+            <div>
+              <div class="archive-title">Pneumatic Disc-Throwing Robot</div>
+              <div class="archive-org">ABU Robocon 2017 &bull; Arduino, Pneumatics</div>
+            </div>
+            <div class="archive-summary">
+              Embedded valve-timing electronics and pneumatic launcher placing multiple soft discs onto multi-height platforms.
+            </div>
+            <div>
+              <button type="button" class="mini-pill" data-media-src="img/rb_2017.png" data-media-title="Pneumatic Disc-Throwing Robot" data-media-caption="ABU Robocon 2017 disc throwing and landing mechanism.">Photo &nearr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         04 // COURSES & INDUSTRIAL TRAININGS
+         ====================================================================== -->
+    <section id="courses" class="section-block">
+      <div class="shell">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-index">04 // CONTINUING EDUCATION</span>
+            <h2 class="section-title">Courses &amp; Industrial Trainings</h2>
+          </div>
+          <p class="section-lead">
+            Certifications and hands-on workshops across digital logic design, IEC 61131-3 PLC programming paradigms, pneumatic simulation, and factory automation.
+          </p>
+        </div>
+
+        <div class="projects-grid reveal" style="margin-bottom: 0;">
+          <!-- 1. Digital Circuits — NPTEL -->
+          <article class="project-tile">
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>COURSE &bull; NPTEL (IIT)</span>
+                <span>Jul &ndash; Oct 2019</span>
+              </div>
+              <h3 class="project-name">Digital Circuits</h3>
+              <p class="project-desc">
+                Comprehensive foundation in combinational and sequential digital electronics, logic synthesis, finite state machines (FSMs), timing analysis, and digital IC principles.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-media-src="img/nptel_cert.jpg" data-media-title="NPTEL Certification — Digital Circuits" data-media-caption="Completed Jul – Oct 2019.">Show Certificate &nearr;</button>
+                <a href="https://onlinecourses.nptel.ac.in/noc21_ee75/preview" target="_blank" rel="noopener" class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Course Info &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Advanced Programming Paradigms (PLC) — Udemy -->
+          <article class="project-tile">
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>COURSE &bull; UDEMY</span>
+                <span>Apr 19, 2020</span>
+              </div>
+              <h3 class="project-name">Advanced Programming Paradigms (PLC)</h3>
+              <p class="project-desc">
+                Industrial IEC 61131-3 control architectures spanning Functional Block Diagrams (FBD), Sequential Function Charts (SFC), Instruction Lists (IL), Ladder Diagrams (LD), and Structured Text (ST).
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-media-src="img/udemy_cert.jpg" data-media-title="Udemy Certification — Advanced PLC Programming Paradigms" data-media-caption="Completed April 19, 2020.">Show Certificate &nearr;</button>
+                <a href="https://www.udemy.com/course/advanced-plc-programming/" target="_blank" rel="noopener" class="mono" style="font-size: 0.72rem; color: var(--text-muted);">Course Info &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. FESTO Automation Technology -->
+          <article class="project-tile">
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>TRAINING CUM INTERNSHIP &bull; FESTO</span>
+                <span>Jul 2020</span>
+              </div>
+              <h3 class="project-name">Industrial Training on Automation Technology</h3>
+              <p class="project-desc">
+                Month-long intensive program combining industrial automation theory with practical electro-pneumatic and control cell application using simulation software.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-media-src="img/FESTO.jpg" data-media-title="FESTO — Online Industrial Training cum Internship" data-media-caption="Completed July 2020.">Show Certificate &nearr;</button>
+                <span class="mono" style="font-size: 0.72rem; color: var(--text-muted);">FESTO Didactic</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Mitsubishi FA Product Training -->
+          <article class="project-tile">
+            <div class="project-content">
+              <div class="project-kicker">
+                <span>WORKSHOP &bull; MITSUBISHI ELECTRIC CUP</span>
+                <span>Dec 13, 2018</span>
+              </div>
+              <h3 class="project-name">Mitsubishi FA Product Training</h3>
+              <p class="project-desc">
+                Two-day factory automation workshop conducted exclusively for teams qualified to the national finals of the Mitsubishi Electric Cup 2019 competition.
+              </p>
+              <div class="project-bottom">
+                <button type="button" class="mini-pill" data-media-src="img/Mitsu Training.jpg" data-media-title="Mitsubishi FA Product Training Certificate" data-media-caption="Mitsubishi Electric Cup 2019 Finalist Workshop — Dec 13, 2018.">Show Certificate &nearr;</button>
+                <a href="https://mitsubishielectric.in/fa/mecup/index.php" target="_blank" rel="noopener" class="mono" style="font-size: 0.72rem; color: var(--text-muted);">ME Cup &nearr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         05 // CONTACT & FOOTER
+         ====================================================================== -->
+    <section id="contact" class="section-block">
+      <div class="shell">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-index">05 // GET IN TOUCH</span>
+            <h2 class="section-title">Contact</h2>
+          </div>
+          <p class="section-lead">
+            Always happy to connect about robotics hardware, high-speed board design, or engineering collaborations.
+          </p>
+        </div>
+
+        <div class="contact-bento reveal">
+          <div class="bento-card">
+            <div class="bento-label">
+              <span>DIRECT CONTACT</span>
+              <span>SAN JOSE, CA</span>
+            </div>
+            <h3 style="font-size: 1.45rem; margin-bottom: 10px;">rohitbangal.rb@gmail.com</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 22px;">
+              Mobile: <a href="tel:+14126577150" style="color: var(--text-primary); font-weight: 500;">+1 (412) 657-7150</a> &bull; Silicon Valley, California
+            </p>
+            <div class="hero-actions" style="margin-bottom: 0;">
+              <button type="button" class="btn-primary-noir" data-copy-email="rohitbangal.rb@gmail.com">
+                <span class="copy-label">Copy Email Address</span>
+              </button>
+              <a href="mailto:rohitbangal.rb@gmail.com" class="btn-ghost-noir">Send Email &nearr;</a>
+              <a href="https://www.linkedin.com/in/rohitbangal" target="_blank" rel="noopener" class="btn-ghost-noir">LinkedIn &nearr;</a>
+              <a href="Rohit%20Bangal%20-%20Resume.pdf" target="_blank" rel="noopener" class="btn-ghost-noir">Resume PDF &nearr;</a>
+            </div>
+          </div>
+
+          <div class="bento-card qr-card">
+            <div class="qr-box">
+              <img src="img/qr.png" alt="Contact vCard QR">
+            </div>
+            <div>
+              <div class="bento-label" style="margin-bottom: 6px;"><span>CONTACT QR</span></div>
+              <h4 style="font-size: 1.05rem; margin-bottom: 6px;">Scan to Save Contact</h4>
+              <p style="font-size: 0.84rem; color: var(--text-secondary);">
+                Quick-save my contact card and links directly to your phone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div>&copy; Copyright <strong>Rohit Bangal</strong>. All Rights Reserved.</div>
+          <div class="social-pill-row">
+            <a href="https://www.linkedin.com/in/rohitbangal" target="_blank" rel="noopener">LinkedIn</a>
+            <span>&middot;</span>
+            <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" rel="noopener">ORCID</a>
+            <span>&middot;</span>
+            <a href="https://www.semanticscholar.org/author/Rohit-Bangal/2213702117" target="_blank" rel="noopener">Semantic Scholar</a>
+            <span>&middot;</span>
+            <a href="#about">Back to Top &uarr;</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bespoke Noir Lightbox / Multi-Slide Report & Video Viewer -->
+  <div id="noir-modal" class="noir-modal" role="dialog" aria-modal="true" aria-labelledby="noir-modal-title">
+    <div class="noir-modal-window">
+      <div class="noir-modal-bar">
+        <div class="noir-modal-title" id="noir-modal-title">Preview</div>
+        <div class="noir-modal-controls">
+          <span class="mono" id="noir-modal-counter" style="font-size: 0.74rem; color: var(--text-muted); margin-right: 4px;"></span>
+          <button type="button" class="modal-icon-btn" id="noir-modal-prev">&larr; Prev</button>
+          <button type="button" class="modal-icon-btn" id="noir-modal-next">Next &rarr;</button>
+          <button type="button" class="modal-icon-btn" id="noir-modal-close">ESC &times;</button>
+        </div>
+      </div>
+      <div class="noir-modal-stage" id="noir-modal-stage"></div>
+      <div class="noir-modal-caption">
+        <span id="noir-modal-caption-text"></span>
       </div>
     </div>
   </div>
-  <section id="about" class="about-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="box-shadow-full">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-sm-6 col-md-5">
-                    <div class="about-img">
-                      <img src="img/rb.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </div>
-                  <div class="col-sm-6 col-md-7">
-                    <div class="about-info">
-                      <p><span class="title-s">Name: </span> <span>Rohit Prashant Bangal</span></p>
-                      <p><span class="title-s">Email: </span> <span>rohitbangal.rb@gmail.com</span></p>
-                      <p><span class="title-s">Mobile: </span> <span>+1 (412) 657-7150</span></p>
-                      <p><span class="title-s">ORCID: </span> <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" style="color: #0f172a; font-weight: 600; text-decoration: underline;">0009-0003-9104-2125</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill-mf">
-                  <p class="title-s">Skills</p>
-					<ul>
-						<li><b>Hardware:</b> High-speed PCB Design, Mixed-Signal Circuit Design, Schematic Capture, layout design; Microcontrollers
-(AVR, ST, ARM), sensor & camera subsystems; SerDes, Sensor Interfaces (ADC/DAC), PMICs, DC-DC converters, rail
-sequencing; Board Bring-Up, Validation Testing, Lab Test Equipment (scopes, digital analyzers, etc.), Debugging; Robotics</li>
-						<li><b>Software/Interfaces:</b> Altium, KiCAD, LTSpice, High-speed (MIPI-CSI, GMSL), Low-speed (I2C, SPI, UART, CAN, JTAG),
-USB-C PD, Python scripting for validation tools, automated test workflows, and lab data processing</li>
-						<li><b>Programming Languages:</b> Python, Embedded C</li>
-					</ul>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="about-me pt-4 pt-md-0">
-                  <div class="title-box-2">
-                    <h5 class="title-left">
-                      About me
-                    </h5>
-                  </div>
-                  <div class="lead">
-                    <ul style="list-style-type: none; padding-left: 0;">
-                      <li class="mb-2">🔌 Electrical &amp; Computer Engineer building autonomous and robotic systems hardware, with hands-on ownership of high-speed mixed-signal PCB design, board bring-up, and system integration</li>
-                      <li class="mb-2">💼 Currently working on production autonomous hardware systems, delivering reliable, scalable solutions under real-world constraints</li>
-                      <li class="mb-2">🎓 MS Electrical and Computer, Carnegie Mellon University | BE Instrumentation and Control, Savitribai Phule Pune University</li>
-                      <li class="mb-2">🔧 Proven project manager, adept at reducing costs &amp; time</li>
-                      <li class="mb-2">🤖 Conference-published engineer and international robotics competition team lead, known for execution, ownership, and impact</li>
-                      <li class="mb-2">📚 Lifelong learner, passionate about making an impact</li>
-                    </ul>
-                  </div>
-                  <div class="pt-3">
-                    <a href="Rohit%20Bangal%20-%20Resume.pdf" target="_blank" rel="noopener">
-                      <button class="btn">
-                        <i class="fa fa-download"></i> Resume
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-<!--                   <p class="lead">
-                    I have always been a keen enthusiast of Technology, Robotics, and Automation. I have always tried to be good at these fields throughout my engineering. I solve problems in creative ways. At Government College of Engineering and Research, where I have completed my graduation in Instrumentation and Control Engineering, I have learned the importance of applying classical strategies and engineering concepts to modern-day projects. I have always learned everything with sincerity and concentration. This approach has always helped me give my best at everything I do.
-                  </p>
-                  <p class="lead">
-					  	<ul>
-						  	<li>Concentrations in the mechatronics field provides a broad knowledge of engineering concepts</li>
-						  	<li>Participated in several projects with my engineering team consisting of students from all branches</li>
-						  	<li>Experience at Different National Level Competitions as a team member and team leader, taught me how to apply engineering concepts to project, products and systems to solve different problem statements and achieve the best efficiency</li>
-							<li>Passion for innovation, prototyping, and high-quality design</li>
-						</ul>
-                  </p> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="journey" class="sect-pt4">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              MY JOURNEY
-            </h3>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/matic.png" alt="Matic Robots" style="width:60%;height:75%;margin-bottom:18%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Matic Robots</h2>
-                  <p class="s-description text-center">Mountain View, CA</p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">Electrical Design Engineer, February 2026 - Present</h3>
-                <div class="lead">
-                  <ul>
-                    <li>Design end-to-end PCBs for robotic subsystems with SoCs and MCUs.</li>
-                    <li>Troubleshoot and root-cause electrical issues to identify short-term and long-term solutions.</li>
-                    <li>Support system integration, board bring-up, and lab validation for autonomous platforms.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/mt.png" alt="Monarch Tractor" style="width:60%;height:75%;margin-bottom:18%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Monarch Tractor</h2>
-                  <p class="s-description text-center"><a href="https://www.monarchtractor.com/" target="_blank">Livermore, CA</a></p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">Electrical Engineer, June 2024 - January 2026</h3>
-                <div class="lead">
-                  <ul>
-                    <li>Designed and validated high-speed, multi-rail embedded compute boards featuring MIPI/GMSL camera subsystems.</li>
-                    <li>Performed board bring-up, SI/PI analysis, and hardware debug using oscilloscopes, logic analyzers, and protocol analyzers.</li>
-                    <li>Led electrical scope for 3+ OEM partnership projects from concept to launch.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/mt.png" alt="Monarch Tractor Internship" style="width:60%;height:75%;margin-bottom:18%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Monarch Tractor</h2>
-                  <p class="s-description text-center"><a href="https://www.monarchtractor.com/" target="_blank">Livermore, CA</a></p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">HV Battery Electrical Systems Intern, June 2023 - August 2023</h3>
-                <div class="lead">
-                  <ul>
-                    <li>Designed a Battery Module Tester for defect detection in cell modules before HV pack assembly.</li>
-                    <li>Eliminated two manual laborers and reduced inspection time by 80%.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/cmu.png" alt="Carnegie Mellon University" style="width:60%;height:75%;margin-bottom:18%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Carnegie Mellon University</h2>
-                  <p class="s-description text-center"><a href="https://www.ece.cmu.edu/academics/ms-ece/applied-program.html" target="_blank">Pittsburgh, PA</a></p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">M.S. in Electrical and Computer Engineering, January 2023 - May 2024</h3>
-                <div class="lead">
-                  <ul>
-                    <li>QPA 3.95/4.00; Eta Kappa Nu Honor Society.</li>
-                    <li>Designed CubeSat control boards, BMS, and camera interface hardware.</li>
-                    <li>Completed coursework in Space Robotics, CubeSat systems, and signal processing.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/te.png" alt="Tantradnyan Engineers" style="width:60%;height:75%;margin-bottom:18%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Tantradnyan Engineers</h2>
-                  <p class="s-description text-center"><a href="https://www.tantraengineers.com/" target="_blank">Ahmednagar, India</a></p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">Project Engineer, April 2020 - November 2022</h3>
-                <div class="lead">
-                  <ul>
-                    <li>Led a 3-member team and reduced production time by 20% through workflow optimization.</li>
-                    <li>Designed control and power wiring diagrams and coordinated engineering execution.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="service-box">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service-ico">
-                  <span class="ico-circle"><img src="img/penrose.png" alt="Robotics Research Lab" style="width:70%;height:70%;margin-bottom:15%;"></span>
-                </div>
-                <div class="service-content">
-                  <h2 class="s-title">Robotics Research Lab</h2>
-                  <p class="s-description text-center"><a href="https://rrlgcoeara.in/" target="_blank">Pune, India</a></p>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <h3 class="s-sec_title">Team Leader, August 2018 - June 2020</h3>
-                <div class="lead">
-                  <ul>
-                    <li>Led a 35-member robotics team for ABU Asia-Pacific Robot Contest and Mitsubishi Electric Cup work.</li>
-                    <li>Won the Special Jury Award at the ABU Asia-Pacific Robot Contest 2019.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="service" class="services-mf route">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              ACCOMPLISHMENT
-            </h3>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="title-box text-center">
-					<h1 class="title-h1">PATENT</h1></div>
-			</div>
-			<div class="col-md-12">
-			  <div class="service-box">
-				<div class="service-ico">
-				  <span class="ico-circle"><ion-icon name="bulb-outline"></ion-icon></span>
-				</div>
-				<div class="service-content">
-				  <h2 class="s-title">PORTABLE, HUMAN-POWERED ELECTRICAL ENERGY SOURCE</h2>
-				  <p class="s-description text-center">
-					Issued: - May 24, 2019. Intellectual Property India Application Number: - 201721041912 (Published).
-				  </p>
-				</div>
-			  </div>
-			</div>
-		</div>
-		<div class="col-sm-12">
-				<div class="title-box text-center">
-					<h1 class="title-h1">PUBLICATIONS</h1></div>
-			</div>
-	    
-	    <div class="row">
-        <div class="col-md-6">
-			<a href="https://ieeexplore.ieee.org/document/10104684" target="_blank">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="hardware-chip-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Design and Control of Omnidirectional Conveyor Model Using <br> Image Processing</h2>
-              <p class="s-description text-center">
-                Published: - April 20, 2023. Publisher: - IEEE
-              </p>
-				<div class="wrapper">
-				<button class="button-rouded" align="center" href="https://ieeexplore.ieee.org/document/10104684" target="_blank" >
-					See Publication
-				</button>
-				</div>
-            </div>
-          </div>
-				</a>
-        </div>
-        <div class="col-md-6">
-			<a href="https://ieeexplore.ieee.org/document/9105783" target="_blank">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="analytics-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Design and Control of Quadruped Robot with Machine Vision based <br> Path
-				Planning</h2>
-              <p class="s-description text-center">
-                Published: - June 2, 2020. Publisher: - IEEE
-              </p>
-				<div class="wrapper">
-				<button class="button-rouded" align="center" href="https://ieeexplore.ieee.org/document/9105783" target="_blank" >
-					See Publication
-				</button>
-				</div>
-            </div>
-          </div>
-				</a>
-        </div>
-      </div>
-	    <!--
-		Row 2 research ppr
-	-->
-      <div class="row">
-		  <div class="col-md-12">
-			  <a href="https://ieeexplore.ieee.org/document/8940566" target="_blank">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="analytics-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Path Planning and Controlling of Omni-Directional Robot Using Cartesian Odometry and PID Algorithm</h2>
-              <p class="s-description text-center">
-                Published: - December 26, 2019. Publisher: - IEEE
-              </p>
-				<div class="wrapper text-center">
-				<button class="button-rouded" align="center" href="https://ieeexplore.ieee.org/document/8940566" target="_blank" >
-					See Publication
-				</button>
-				</div>
-            </div>
-          </div>
-		</a>
-        </div>
-      </div>
-      <div class="col-sm-12">
-				<div class="title-box text-center">
-					<h1 class="title-h1">PEER REVIEWS & EDITORIAL SERVICE</h1></div>
-			</div>
-	    <div class="row">
-        <div class="col-md-12">
-			  <div class="service-box">
-				<div class="service-ico">
-				  <span class="ico-circle"><ion-icon name="create-outline"></ion-icon></span>
-				</div>
-				<div class="service-content">
-				  <h2 class="s-title">IEEE Transactions on Robot Learning (IEEE T-RL)</h2>
-				  <p class="s-description text-center">
-					<b>Peer Reviewer</b> — Invited reviewer evaluating manuscripts in robotics, motion planning, and learning systems (June 2026).
-				  </p>
-				</div>
-			  </div>
-			</div>
-		</div>
-		<div class="col-sm-12">
-				<div class="title-box text-center">
-					<h1 class="title-h1">AWARDS</h1></div>
-			</div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="trophy-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Special Jury Award</h2>
-              <p class="s-description text-center">
-                Team Leader <br> Occasion: - DD Robocon  <br> Issued: - June 15, 2019 
-              </p>
-				<div class="wrapper">
-					<button class="button1" align="center" data-modal="modal_sja" >
-						Show Certificate
-					</button>
-				</div>
-				
-				<div id="modal_sja" class="modal">
-					<div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/rc_cert/Robocon 2019.jpg" alt="SJA CERTIFICATE" style="max-width: 100%">
-						</div>
-					 </div>
-				</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="trophy-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Commendable Performance Award</h2>
-              <p class="s-description text-center">
-                Team Leader <br> Occasion: - Mitsubishi Electric Cup <br> Issued: - February 15, 2019 
-              </p>
-				<div class="wrapper">
-					<button class="button1" align="center" data-modal="modal_cpa" >
-						Show Certificate
-					</button>
-				</div>
-				
-				<div id="modal_cpa" class="modal">
-					<div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/Mitsubishi Cup Commendable.jpg" alt="CPA CERTIFICATE" style="max-width: 100%">
-						</div>
-					 </div>
-				</div>
-            </div>
-          </div>
-        </div>
-      </div>
-		<div class="row">
-        <div class="col-md-6">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="trophy-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">National Engineering Olympiad</h2>
-              <p class="s-description text-center">
-                Secured All India Rank 1<br> Based on Basic and Technical Aptitude <br> Issued: - June, 2018 
-              </p>
-				<div class="wrapper">
-					<button class="button1" align="center" data-modal="modal_neo" >
-						Show Certificate
-					</button>
-				</div>
-				
-				<div id="modal_neo" class="modal">
-					<div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/Engg Olympiad Certificate_r.jpg" alt="NEO CERTIFICATE" style="max-width: 100%">
-						</div>
-					 </div>
-				</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><ion-icon name="trophy-outline"></ion-icon></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Smart and Simple Robot</h2>
-              <p class="s-description text-center">
-                Electronics Designing and Programming <br> Occasion: -  DD Robocon <br> Issued: - March 5, 2018  
-              </p>
-				<div class="wrapper">
-					<button class="button1" align="center" data-modal="modal_ssr" >
-						Show Certificate
-					</button>
-				</div>
-				
-				<div id="modal_ssr" class="modal">
-					<div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/rc_cert/Robocon 2018 Robu.in.jpg" alt="SSR CERTIFICATE" style="max-width: 100%">
-						</div>
-					 </div>
-				</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div id="work" class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-		  <div class="col-sm-3 col-lg-3"></div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
-            </div>
-            <div class="counter-num">
-              	<p class="counter">15</p><p>+</p>
-				<span class="counter-text">PROJECTS COMPLETED</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">4</p><p>+</p>
-              <span class="counter-text">YEARS OF EXPERIENCE</span>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </div>
-  </div>
-  <section class="portfolio-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              WORK PROJECTS
-            </h3>
-            <p class="subtitle-a">
-              TANTRADNYAN ENGINEERS
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row match-my-cols">
-        <div class="col-md-6">
-          <div class="work-box">
-			  <a href="img/jubi.jpeg" data-lightbox="te_p1" data-title="Project was to monitor and control specific operations at remote location. It was not feasible to connect the control room PLC with remote location PLC using cable. So, Ubiquiti antennas were used as trans-receivers at both ends to establish connection. Other features included Alarms(signal and logging), system access control, etc.">
-              <div class="work-img">
-                <img src="img/jubi.jpeg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Communication between two PLCs at distance using Dish antennas (Wi-Fi)<br><br></h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Delta PLC and HMI, Ubiquiti</span></div>
-                  </div>
-                  <div class="col-sm-2"> 
-                <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-			  </a>
-          </div>
-        </div>
-        
-        
-        <div class="col-md-6">
-          <div class="work-box">
-            <a href="img/graph_1.png" data-lightbox="te-p2" data-title="">
-              <div class="work-img">
-                <img src="img/graph_1.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Designing and Programming of 'Graphing and Controlling VB.net software' for Siemens S7 PLC</h2>
-					  <div class="w-more">
-                      <span class="w-ctegory">TIA Portal, Visual Studio</span></div>
-					</div>
-                  <div class="col-sm-2"> 
-                <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                    </div>
-                </div>
-              </div>
-            </a>
-			  <a href="img/graph_2.png" data-lightbox="te-p2" data-title="Visual Studio VB.Net program snippet"></a>
-          </div>
-        </div>
-		  <div class="col-md-6">
-          <div class="work-box">
-            <a href="img/lt.jpeg" data-lightbox="te_p3" data-title="Automatic test bench to check the temperature changes using variable current flow through switchgears.">
-              <div class="work-img">
-                <img src="img/lt.jpeg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-				  <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Switchgear test bench automation<br><br></h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Selec PLC</span></div>
-                 </div>
-                  <div class="col-sm-2"> 
-                <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                    </div>
-				  </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="work-box">
-            <a href="img/pyro.jpg" data-lightbox="te_p4" data-title="Monitor and control the temperature of busbar at optimal level to optimise the tinning process. Raytek pyrometer was used to sense the temperature of busbar from distance.">
-              <div class="work-img">
-                <img src="img/pyro.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Busbar tinning automation using Pyrometer<br><br></h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Selec PLC and HMI, Raytek Pyrometer</span></div>
-					</div>
-                  <div class="col-sm-2"> 
-                <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                    </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
-		<div class="wrapper col-xl-12">
-			<button class="button1" align="center" data-modal="modalprojects" >
-				Show More
-			</button>
-		</div>
-
-		<div id="modalprojects" class="modal">
-			<div class="modal-content">
-				<div class="contact-form">
-					<a class="close">&times;</a>
-					<img src="img/te_pr.PNG" alt="TE Projects" style="max-width: 100%">
-				</div>
-			</div>
-		</div>
-      </div>
-	<div class="row">
-	<br><hr style="width:90%;text-align:center;margin-left:5%;background: #49C8F5"><br>	<br>
-	</div>
-	<div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              ENGINEERING PROJECTS
-            </h3>
-            <p class="subtitle-a">
-              GOVERNMENT COLLEGE OF ENGINEERING AND RESEARCH 
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row is-flex">
-        <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            <a href="img/aca_project/1.JPG" data-lightbox="eng_p1" >
-              <div class="work-img">
-                <img src="img/sg_report/concept.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Smart Grid<br><br><br></h2>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Allen-Bradley PLC, NodeMCU, Android Studio, Firebase database & Hosting</span></div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-			  <a href="img/sg_report/0001.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0002.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0003.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0004.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0005.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0006.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0007.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0008.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0009.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0010.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0011.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0012.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0013.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-			  <a href="img/sg_report/0014.jpg" data-lightbox="eng_p1" data-title="These are some pages from final project report"></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            <a href="img/rc_20/1.jpg" data-lightbox="eng_p2" data-title="This is pick-place robot. Worked on designing and validation of robot.">
-              <div class="work-img">
-                <img src="img/rc_20/3.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Rugby Ball pick-place and kick robots<br><br><br></h2>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Arduino, Pneumatics, IMU</span></div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-			<a href="img/rc_20/2.jpg" data-lightbox="eng_p2" data-title="This is kick robot. Worked on designing and validation of robot."></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/mahindra/snap.png" data-lightbox="eng_p3" data-title="Designed the algorithm to follow path using given co-ordinates using encoders as feedback. Designed and assembled the Pick and Place arm using linear actuators.">
-              <div class="work-img">
-                <img src="img/mahindra/snap_sm.png" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-10">
-                  <h2 class="w-title">Pick and Place Automatic Guided Vehicle Scaled Robot</h2>
-                  <p class="mt-2 mb-2">
-                    <button class="button1" data-modal="modal_mahindra">
-                      Show Video
-                    </button>
-                  </p>
-                  <div class="w-more">
-                    <span class="w-ctegory">Arduino, Encoder, Linear Actuator, IMU</span>
-                  </div>
-                </div>
-                <div class="col-sm-2">
-                  <a href="img/mahindra/snap.png" data-lightbox="eng_p3" data-title="Designed the algorithm to follow path using given co-ordinates using encoders as feedback. Designed and assembled the Pick and Place arm using linear actuators.">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </a>
-                  <a href="img/Mahindra Certificate.jpg" data-lightbox="eng_p3"></a>
-                  <a href="img/mahindra/schematic.jpg" data-lightbox="eng_p3"></a>
-                </div>
-              </div>
-            </div>
-            <div id="modal_mahindra" class="modal">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <video id="vid_mah" width="100%" src="img/mahindra/run.mp4" type="video/mp4" controls></video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            <a href="img/mini_project/2.png" data-lightbox="eng_p4" data-title="Designed and modelled the project using CATIA. Designed and implemented control logic and electronics. Used Proteus to simulate and test the logic.">
-              <div class="work-img">
-                <img src="img/mini_project/1.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Smart Street<br><br><br></h2>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Arduino, IR Sensors, Servo Motors</span></div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            <a href="img/mitsu/1.jpg" data-lightbox="eng_p5" data-title="Designed the control logic and worked on wiring diagram. Designed and programmed the control logic in Mitsubishi PLC, HMI and NodeMCU.">
-              <div class="work-img">
-                <img src="img/mitsu/1_sm.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Calender based Building Energy Management System<br><br></h2>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Mitsubishi PLC and HMI, NodeMCU, MQTT</span></div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-			  <a href="img/mitsu/2.jpg" data-lightbox="eng_p5"></a>			  
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/quadru/quadru.jpg" data-lightbox="eng_p6" data-title="Worked on designing, testing and validation of control system and electronics of robots. Worked on designing, modeling, manufacturing, assembly and validation of leg mechanism of robot.">
-              <div class="work-img">
-                <img src="img/quadru/quadru.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-10">
-                  <h2 class="w-title">Quadruped Robot</h2>
-                  <p class="mt-2 mb-2">
-                    <button class="button1" data-modal="modal_quadru">
-                      Show Video
-                    </button>
-                  </p>
-                  <div class="w-more">
-                    <span class="w-ctegory">Raspberry Pi, Arduino, Lead Screw Linear Actuator, IMU</span>
-                  </div>
-                </div>
-                <div class="col-sm-2">
-                  <a href="img/quadru/quadru.jpg" data-lightbox="eng_p6" data-title="Worked on designing, testing and validation of control system and electronics of robots. Worked on designing, modeling, manufacturing, assembly and validation of leg mechanism of robot.">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </a>
-                  <a href="img/quadru/slope.png" data-lightbox="eng_p6" data-title="Capable of climbing slope of upto 15 degrees"></a>
-                  <a href="img/quadru/step.png" data-lightbox="eng_p6" data-title="Capable of crossing hurdles like steps"></a>
-                  <a href="img/quadru/leglength.jpg" data-lightbox="eng_p6"></a>
-                  <a href="img/quadru/ip.png" data-lightbox="eng_p6" data-title="Image Processing Block Diagram Represenatation"></a>
-                  <a href="img/quadru/Controller.png" data-lightbox="eng_p6" data-title="Arduino and IMU used to control the locomotion"></a>
-                  <a href="img/quadru/motors.png" data-lightbox="eng_p6" data-title="BLDC motors and ODrive used to actuate and control the position of each leg"></a>
-                </div>
-              </div>
-            </div>
-            <div id="modal_quadru" class="modal">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <video id="vid_quad" width="100%" src="img/quadru/MR2.mp4" type="video/mp4" controls></video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box" style="height: 90%">
-            <a href="img/rb_2017.png" data-lightbox="eng_p7" data-title="Worked on designing and implementing of control system and electronics for disk throwing and
-landing mechanism. The mechanism mainly used pneumatics to throw and land multiple soft disks on specified locations.">
-              <div class="work-img">
-                <img src="img/rb_2017_sm.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row" style="height: 100%">
-                  <div class="col-sm-10">
-                    <h2 class="w-title">Disc throwing robot<br><br></h2>
-                    <div class="w-more" style="position: absolute;bottom: 0;">
-                      <span class="w-ctegory">Arduino, Pneumatics</span></div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="w-like">
-                      <span class="ion-flash"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!--/ Section Testimonials Star 
-  <div class="testimonials paralax-mf bg-image" style="background-image: url(img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div id="testimonial-mf" class="owl-carousel owl-theme">
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Xavi Alonso</span>
-              </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Marta Socrate</span>
-              </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>/-->
-  <section id="blog" class="blog-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              COURSES & TRAININGS
-            </h3>
-            <p class="subtitle-a">
-              
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-1.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Course</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="blog-single.html">Digital Circuits</a></h3>
-              <p class="card-description">
-                Designed primarily as a single course covering the digital circuits for aspirant willing to learn digital electronics principles comprehensively in today’s perspective<br><br>
-				  <p>
-				  <button class="button1" data-modal="modalOne">
-					Show Certificate
-				  </button>
-				</p>
-
-					<div id="modalOne" class="modal">
-					  <div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/nptel_cert.jpg" alt="NPTEL CERTIFICATE" style="max-width: 100%">
-						</div>
-					  </div>
-					</div>
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="https://onlinecourses.nptel.ac.in/noc21_ee75/preview" target="_blank">
-                  <img src="img/digital_circuit.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author">NPTEL</span>
-                </a>
-              </div>
-              <div class="post-date">
-                <span class="ion-ios-clock-outline"></span> July - October 2019
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-2.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Course</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="blog-single.html">Advanced Programming Paradigms (PLC)</a></h3>
-              <p class="card-description"> 
-                Functional Block Diagrams, Sequential Function Charts, Instruction Lists, Ladder Diagrams and Structured Text<br><br><br>
-				  
-				<p>
-				  <button class="button1" data-modal="modalTwo">
-					Show Certificate
-				  </button>
-				</p>
-
-				<div id="modalTwo" class="modal">
-				  <div class="modal-content">
-					<div class="contact-form">
-					  <span class="close">&times;</span>
-					  <img src="img/udemy_cert.jpg" alt="UDEMY CERTIFICATE" style="max-width: 100%">
-					</div>
-				  </div>
-				</div>
-
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="https://www.udemy.com/course/advanced-plc-programming/" target="_blank">
-                  <img src="img/udemy-plc.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author">Udemy</span>
-                </a>
-              </div>
-              <div class="post-date">
-                <span class="ion-ios-clock-outline"></span> April 19, 2020
-              </div>
-            </div>
-          </div>
-        </div>
-	  </div>
-	<div class="row">
-        <div class="col-md-6">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/festo_sim.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Training cum Internship</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="">Online Industrial Training cum Internship on Automation Technology</a></h3>
-              <p class="card-description">
-                It was a month long program consisting training and practical application using simulation softwares <br><br>
-				  <p>
-				  <button class="button1" data-modal="modalThree">
-					Show Certificate
-				  </button>
-				</p>
-
-					<div id="modalThree" class="modal">
-					  <div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/FESTO.jpg" alt="FESTO CERTIFICATE" style="max-width: 100%">
-						</div>
-					  </div>
-					</div>
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author"><img src="img/festo_logo.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author" >FESTO</span></div>
-				<div class="post-date">
-                <span class="ion-ios-clock-outline"></span> July, 2020
-              </div>
-            </div>
-          </div>
-        </div>
-      <div class="col-md-6">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-3.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Training</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="">Mitsubishi FA Product Training</a></h3>
-              <p class="card-description"><br>
-                It was two day workshop for qualified teams to the Mitsubishi Electric Cup competition <br><br>
-				  <p>
-				  <button class="button1" data-modal="modalFour">
-					Show Certificate
-				  </button>
-				</p>
-
-					<div id="modalFour" class="modal">
-					  <div class="modal-content">
-						<div class="contact-form">
-						  <a class="close">&times;</a>
-						  <img src="img/Mitsu Training.jpg" alt="NPTEL CERTIFICATE" style="max-width: 100%">
-						</div>
-					  </div>
-					</div>
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="https://mitsubishielectric.in/fa/mecup/index.php" target="_blank">
-                  <img src="img/head_link.png" alt="" class="avatar rounded-circle">
-                  <span class="author" >Mitsubishi Electric Cup 2019</span>
-                </a>
-              </div>
-				<div class="post-date">
-                <span class="ion-ios-clock-outline"></span> December 13, 2018
-              </div>
-            </div>
-          </div>
-        </div>
-	</div>
-    </div>
-  </section>
-  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-mf">
-            <div id="contact" class="box-shadow-full">
-              <div class="row">
-				  <div class="col-md-6" align="center">
-				    <img src="img/qr.png" style="width: 70%;">
-				  </div>	
-                <div class="col-md-6">
-                  <div class="title-box-2 pt-4 pt-md-0">
-                    <h5 class="title-left">
-                      Get in Touch
-                    </h5>
-                  </div>
-                  <div class="more-info">
-                    <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span>San Jose, CA</li>
-                      <li><a href="tel:+1 (412) 657-7150"><span class="ion-ios-telephone"></span>+1 (412) 657-7150</a></li>
-                      <li><a href="mailto:rohitbangal.rb@gmail.com"><span class="ion-email"></span>rohitbangal.rb@gmail.com</a></li>
-                    </ul>
-                  </div>
-                  <div class="socials d-flex align-items-center">
-					  <a href="https://www.linkedin.com/in/rohitbangal" target="_blank" title="LinkedIn"><i class="ion-social-linkedin" style="font-size: 36px; color: #0284c7; margin-right: 20px; vertical-align: middle;"></i></a>
-					  <a href="https://orcid.org/0009-0003-9104-2125" target="_blank" title="ORCID"><ion-icon name="finger-print-outline" style="font-size: 36px; color: #0f172a; margin-right: 20px; vertical-align: middle;"></ion-icon></a>
-					  <a href="https://www.semanticscholar.org/author/Rohit-Bangal/2213702117" target="_blank" title="Semantic Scholar"><ion-icon name="school-outline" style="font-size: 36px; color: #0284c7; vertical-align: middle;"></ion-icon></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>Rohit Bangal</strong>. All Rights Reserved</p>
-              <div class="credits">
-                Designed by <a href="#">Rohit Bangal</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </section>
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/counterup/jquery.waypoints.min.js"></script>
-  <script src="lib/counterup/jquery.counterup.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <script src="lib/typed/typed.min.js"></script>
-  <script src="contactform/contactform.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/modal.js"></script>
-  
+  <script src="js/bespoke.js?v=6"></script>
 </body>
 </html>
