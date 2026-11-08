@@ -1064,7 +1064,7 @@ p:last-child {
 
 /* Metric Bento Tiles */
 .metric-big {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 2.2vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.04em;
   color: var(--text-primary);
@@ -1079,7 +1079,12 @@ p:last-child {
 .metric-desc {
   font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.48;
+}
+
+.metric-desc strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* ==========================================================================
