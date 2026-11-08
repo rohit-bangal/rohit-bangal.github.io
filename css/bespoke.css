@@ -13,6 +13,7 @@ body[data-theme="dark"] {
   --bg-window-bar: #16161b;
   --bg-stage: #0c0c0f;
   --bg-pill: rgba(24, 24, 29, 0.78);
+  --bg-pill-mobile: rgba(20, 20, 25, 0.92);
   --bg-chip: rgba(255, 255, 255, 0.045);
   --bg-chip-active: #fafafa;
   --text-chip-active: #09090b;
@@ -48,6 +49,7 @@ body[data-theme="light"] {
   --bg-window-bar: #f3f3f0;
   --bg-stage: #f4f4f1;
   --bg-pill: rgba(255, 255, 255, 0.86);
+  --bg-pill-mobile: rgba(255, 255, 255, 0.94);
   --bg-chip: rgba(24, 24, 27, 0.045);
   --bg-chip-active: #18181b;
   --text-chip-active: #fafafa;
@@ -164,7 +166,7 @@ p:last-child {
 }
 
 /* ==========================================================================
-   FLOATING GLASS PILL DOCK NAVBAR (Marco.fyi / Perry Wang style)
+   FLOATING GLASS PILL DOCK NAVBAR (Desktop Pill + Mobile Dropdown Sheet)
    ========================================================================== */
 .dock-header {
   position: fixed;
@@ -191,12 +193,6 @@ p:last-child {
   border: 1px solid var(--border-hairline);
   box-shadow: var(--dock-shadow);
   max-width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.dock-nav::-webkit-scrollbar {
-  display: none;
 }
 
 .dock-monogram {
@@ -213,6 +209,21 @@ p:last-child {
   font-weight: 700;
   margin-right: 4px;
   flex-shrink: 0;
+}
+
+.dock-mobile-trigger {
+  display: none;
+}
+
+.dock-links-drawer {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dock-links-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .dock-link {
@@ -262,6 +273,162 @@ p:last-child {
 
 .dock-theme-btn:hover {
   border-color: var(--border-strong);
+}
+
+/* Mobile Expanding Glass Dropdown (<= 760px, zero horizontal scroll) */
+@media (max-width: 760px) {
+  .dock-header {
+    top: 12px;
+    padding: 0 12px;
+  }
+
+  .dock-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    width: min(100%, 420px);
+    padding: 6px 8px;
+    border-radius: 22px;
+    background: var(--bg-pill-mobile);
+    backdrop-filter: blur(24px) saturate(170%);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .dock-nav.menu-open {
+    border-color: var(--border-strong);
+  }
+
+  .dock-monogram {
+    order: 1;
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
+  }
+
+  .dock-mobile-trigger {
+    order: 2;
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: var(--bg-chip);
+    border: 1px solid var(--border-hairline);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+
+  .dock-mobile-trigger:hover,
+  .dock-nav.menu-open .dock-mobile-trigger {
+    border-color: var(--border-strong);
+  }
+
+  .dock-mobile-current {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dock-mobile-chevron {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+  }
+
+  .dock-nav.menu-open .dock-mobile-chevron {
+    transform: rotate(180deg);
+    color: var(--text-primary);
+  }
+
+  .dock-divider {
+    display: none;
+  }
+
+  .dock-theme-btn {
+    order: 3;
+    height: 32px;
+    padding: 0 11px;
+    flex-shrink: 0;
+  }
+
+  .dock-links-drawer {
+    order: 4;
+    flex: 0 0 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+    transition: grid-template-rows 0.26s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  }
+
+  .dock-nav.menu-open .dock-links-drawer {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .dock-links-inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: 1px solid transparent;
+    transition: padding 0.22s ease, margin 0.22s ease, border-color 0.22s ease;
+  }
+
+  .dock-nav.menu-open .dock-links-inner {
+    padding-top: 8px;
+    padding-bottom: 2px;
+    margin-top: 4px;
+    border-top-color: var(--border-hairline);
+  }
+
+  .dock-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 13px;
+    font-size: 0.88rem;
+  }
+
+  .dock-link.active::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-signal);
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  #theme-toggle-label {
+    display: none;
+  }
+
+  .dock-theme-btn {
+    width: 32px;
+    padding: 0;
+    justify-content: center;
+  }
 }
 
 /* ==========================================================================

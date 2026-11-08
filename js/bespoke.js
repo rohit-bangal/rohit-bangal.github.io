@@ -130,13 +130,58 @@
     });
   });
 
-  // 8. Scroll Progress Bar & Floating Dock Scroll-Spy
+  // 8. Scroll Progress Bar, Mobile Dropdown & Floating Dock Scroll-Spy
   var progressBar = document.getElementById('scroll-progress');
+  var dockNav = document.getElementById('dock-nav');
+  var mobileTrigger = document.getElementById('dock-mobile-trigger');
+  var mobileCurrentLabel = document.getElementById('dock-mobile-current');
   var dockLinks = document.querySelectorAll('.dock-link[href^="#"]');
   var trackedSections = [];
   dockLinks.forEach(function (link) {
     var sec = document.querySelector(link.getAttribute('href'));
     if (sec) trackedSections.push({ id: sec.id, el: sec, link: link });
+  });
+
+  function setMobileMenu(open) {
+    if (!dockNav || !mobileTrigger) return;
+    if (open) {
+      dockNav.classList.add('menu-open');
+      mobileTrigger.setAttribute('aria-expanded', 'true');
+    } else {
+      dockNav.classList.remove('menu-open');
+      mobileTrigger.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  if (mobileTrigger) {
+    mobileTrigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setMobileMenu(!dockNav.classList.contains('menu-open'));
+    });
+  }
+
+  dockLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (mobileCurrentLabel) mobileCurrentLabel.textContent = link.textContent;
+      setMobileMenu(false);
+    });
+  });
+
+  var monogramLink = document.querySelector('.dock-monogram');
+  if (monogramLink) {
+    monogramLink.addEventListener('click', function () {
+      setMobileMenu(false);
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    if (dockNav && dockNav.classList.contains('menu-open') && !dockNav.contains(e.target)) {
+      setMobileMenu(false);
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 760) setMobileMenu(false);
   });
 
   function onScroll() {
@@ -155,6 +200,9 @@
     if (activeItem) {
       dockLinks.forEach(function (l) { l.classList.remove('active'); });
       activeItem.link.classList.add('active');
+      if (mobileCurrentLabel) {
+        mobileCurrentLabel.textContent = activeItem.link.textContent;
+      }
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -306,6 +354,9 @@
   });
 
   document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && dockNav && dockNav.classList.contains('menu-open')) {
+      setMobileMenu(false);
+    }
     if (!modal || !modal.classList.contains('open')) return;
     if (e.key === 'Escape') closeModal();
     if (e.key === 'ArrowLeft' && currentSlides.length > 1) btnPrev.click();
