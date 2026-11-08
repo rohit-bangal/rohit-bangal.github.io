@@ -163,8 +163,8 @@
   // 9. Bespoke Noir Lightbox (Single Image, Multi-Slide Decks & HTML5 Video)
   var GALLERIES = {
     battery_tester: [
-      { src: 'img/battery_tester/pcb_rev3.jpg', title: 'Smart Battery Module Tester — Custom Rev 3 PCB', caption: 'Custom mixed-signal diagnostic PCB integrating a TI multi-cell battery monitor AFE, isolated DC-DC power, RA8875 TFT controller, USB-C charging, and keyed module harness I/O.' },
-      { src: 'img/battery_tester/enclosure_ui.jpg', title: 'Assembled Tester & Diagnostic Touchscreen UI', caption: '3D-printed bench/handheld enclosure displaying microvolt cell voltages, F1–F5 fuse indicators, T1/T2 NTC thermistor break detection, and QR-encoded test results.' }
+      { src: 'img/battery_tester/pcb_rev3.jpg?v=2', title: 'Smart Battery Module Tester — Custom Rev 3 PCB', caption: 'Custom mixed-signal diagnostic PCB integrating a TI multi-cell battery monitor AFE, isolated DC-DC power, RA8875 TFT controller, USB-C charging, and keyed module harness I/O.' },
+      { src: 'img/battery_tester/enclosure_ui.jpg?v=2', title: 'Assembled Tester & Diagnostic Touchscreen UI', caption: '3D-printed bench/handheld enclosure displaying microvolt cell voltages, F1–F5 fuse indicators, T1/T2 NTC thermistor break detection, and QR-encoded test results.' }
     ],
     quadru_diagrams: [
       { src: 'img/quadru/quadru.jpg', title: 'Autonomous Quadruped Robot', caption: 'Full four-legged robot assembly engineered for ABU Robocon 2019.' },
