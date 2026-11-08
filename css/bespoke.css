@@ -37,6 +37,7 @@ body[data-theme="dark"] {
   --window-glow: 0 -12px 60px -15px rgba(56, 189, 248, 0.12), 0 30px 60px -20px rgba(0, 0, 0, 0.75);
   --card-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.7);
   --dock-shadow: 0 12px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --popover-shadow: 0 24px 52px -10px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --spotlight-color: rgba(255, 255, 255, 0.045);
   --modal-backdrop: rgba(5, 5, 7, 0.88);
 }
@@ -73,6 +74,7 @@ body[data-theme="light"] {
   --window-glow: 0 24px 54px -18px rgba(15, 23, 42, 0.10), 0 2px 6px rgba(15, 23, 42, 0.04);
   --card-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
   --dock-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --popover-shadow: 0 20px 44px -10px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   --spotlight-color: rgba(2, 132, 199, 0.045);
   --modal-backdrop: rgba(17, 17, 19, 0.72);
 }
@@ -166,7 +168,7 @@ p:last-child {
 }
 
 /* ==========================================================================
-   FLOATING GLASS PILL DOCK NAVBAR (Desktop Pill + Mobile Dropdown Sheet)
+   FLOATING GLASS PILL DOCK NAVBAR (Desktop Pill + Detached Mobile Popover)
    ========================================================================== */
 .dock-header {
   position: fixed;
@@ -195,7 +197,12 @@ p:last-child {
   max-width: 100%;
 }
 
+.dock-bar {
+  display: contents;
+}
+
 .dock-monogram {
+  order: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -216,11 +223,7 @@ p:last-child {
 }
 
 .dock-links-drawer {
-  display: inline-flex;
-  align-items: center;
-}
-
-.dock-links-inner {
+  order: 2;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -247,6 +250,7 @@ p:last-child {
 }
 
 .dock-divider {
+  order: 3;
   width: 1px;
   height: 18px;
   background: var(--border-hairline);
@@ -255,6 +259,7 @@ p:last-child {
 }
 
 .dock-theme-btn {
+  order: 4;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -275,36 +280,49 @@ p:last-child {
   border-color: var(--border-strong);
 }
 
-/* Mobile Expanding Glass Dropdown (<= 760px, zero horizontal scroll) */
+/* Detached Floating Glass Popover on Mobile (<= 760px) */
 @media (max-width: 760px) {
   .dock-header {
-    top: 12px;
-    padding: 0 12px;
+    top: 14px;
+    padding: 0 14px;
   }
 
   .dock-nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    width: min(100%, 420px);
-    padding: 6px 8px;
-    border-radius: 22px;
-    background: var(--bg-pill-mobile);
-    backdrop-filter: blur(24px) saturate(170%);
-    -webkit-backdrop-filter: blur(24px) saturate(170%);
-    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+    position: relative;
+    display: block;
+    width: min(100%, 340px);
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
   }
 
-  .dock-nav.menu-open {
+  .dock-bar {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 6px 7px;
+    gap: 4px;
+    border-radius: 999px;
+    background: var(--bg-pill-mobile);
+    backdrop-filter: blur(22px) saturate(175%);
+    -webkit-backdrop-filter: blur(22px) saturate(175%);
+    border: 1px solid var(--border-hairline);
+    box-shadow: var(--dock-shadow);
+    transition: border-color 0.2s ease;
+  }
+
+  .dock-nav.menu-open .dock-bar {
     border-color: var(--border-strong);
   }
 
   .dock-monogram {
-    order: 1;
-    width: 32px;
-    height: 32px;
-    margin-right: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
   }
 
   .dock-mobile-trigger {
@@ -312,25 +330,25 @@ p:last-child {
     flex: 1;
     min-width: 0;
     height: 32px;
-    padding: 0 12px;
+    padding: 0 10px;
     border-radius: 999px;
-    background: var(--bg-chip);
-    border: 1px solid var(--border-hairline);
+    background: transparent;
+    border: none;
     color: var(--text-primary);
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
-    transition: border-color 0.2s ease;
+    transition: background 0.18s ease;
   }
 
   .dock-mobile-trigger:hover,
   .dock-nav.menu-open .dock-mobile-trigger {
-    border-color: var(--border-strong);
+    background: var(--bg-chip);
   }
 
   .dock-mobile-current {
@@ -340,9 +358,8 @@ p:last-child {
   }
 
   .dock-mobile-chevron {
-    font-size: 0.78rem;
     color: var(--text-secondary);
-    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
     flex-shrink: 0;
   }
 
@@ -352,74 +369,23 @@ p:last-child {
   }
 
   .dock-divider {
-    display: none;
+    margin: 0 2px;
+    height: 16px;
   }
 
   .dock-theme-btn {
-    order: 3;
     height: 32px;
-    padding: 0 11px;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    font-size: 0.78rem;
     flex-shrink: 0;
   }
 
-  .dock-links-drawer {
-    order: 4;
-    flex: 0 0 100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    pointer-events: none;
-    transition: grid-template-rows 0.26s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  .dock-theme-btn:hover {
+    background: var(--bg-chip);
   }
 
-  .dock-nav.menu-open .dock-links-drawer {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .dock-links-inner {
-    min-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 3px;
-    padding-top: 0;
-    margin-top: 0;
-    border-top: 1px solid transparent;
-    transition: padding 0.22s ease, margin 0.22s ease, border-color 0.22s ease;
-  }
-
-  .dock-nav.menu-open .dock-links-inner {
-    padding-top: 8px;
-    padding-bottom: 2px;
-    margin-top: 4px;
-    border-top-color: var(--border-hairline);
-  }
-
-  .dock-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 13px;
-    font-size: 0.88rem;
-  }
-
-  .dock-link.active::after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-signal);
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 400px) {
   #theme-toggle-label {
     display: none;
   }
@@ -428,6 +394,77 @@ p:last-child {
     width: 32px;
     padding: 0;
     justify-content: center;
+    font-size: 0.92rem;
+  }
+
+  /* Detached Popover Menu Card */
+  .dock-links-drawer {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 6px;
+    border-radius: 18px;
+    background: var(--bg-pill-mobile);
+    backdrop-filter: blur(26px) saturate(180%);
+    -webkit-backdrop-filter: blur(26px) saturate(180%);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--popover-shadow);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.96);
+    transform-origin: top center;
+    transition:
+      opacity 0.18s ease,
+      transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0.18s ease;
+  }
+
+  .dock-nav.menu-open .dock-links-drawer {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .dock-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    box-shadow: none;
+  }
+
+  .dock-link:hover {
+    background: var(--bg-chip);
+    color: var(--text-primary);
+  }
+
+  .dock-link.active {
+    background: var(--bg-chip);
+    color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px var(--border-hairline);
+  }
+
+  .dock-link.active::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-signal);
+    box-shadow: 0 0 8px var(--accent-signal);
+    flex-shrink: 0;
   }
 }
 

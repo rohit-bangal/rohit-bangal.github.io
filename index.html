@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Bespoke Design System -->
-  <link href="css/bespoke.css?v=8" rel="stylesheet">
+  <link href="css/bespoke.css?v=9" rel="stylesheet">
 </head>
 
 <body data-theme="dark">
@@ -26,33 +26,35 @@
   <!-- Subtle Top Radial Backlight + Architectural Dot Matrix -->
   <div class="ambient-canvas"></div>
 
-  <!-- Floating Glass Pill Dock (Inline Pill on Desktop, Expanding Dropdown Pill on Mobile) -->
+  <!-- Floating Glass Pill Dock (Inline Pill on Desktop, Floating Popover on Mobile) -->
   <header class="dock-header">
     <nav class="dock-nav" id="dock-nav" aria-label="Primary Navigation">
-      <a href="#about" class="dock-monogram" title="Rohit Bangal">RB</a>
+      <div class="dock-bar">
+        <a href="#about" class="dock-monogram" title="Rohit Bangal">RB</a>
 
-      <button type="button" class="dock-mobile-trigger" id="dock-mobile-trigger" aria-expanded="false" aria-controls="dock-links-drawer" aria-label="Toggle navigation menu">
-        <span class="dock-mobile-current" id="dock-mobile-current">About</span>
-        <span class="dock-mobile-chevron" aria-hidden="true">&#9662;</span>
-      </button>
+        <button type="button" class="dock-mobile-trigger" id="dock-mobile-trigger" aria-expanded="false" aria-controls="dock-links-drawer" aria-label="Toggle navigation menu">
+          <span class="dock-mobile-current" id="dock-mobile-current">About</span>
+          <svg class="dock-mobile-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4.25 6.25L8 10L11.75 6.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-      <div class="dock-links-drawer" id="dock-links-drawer">
-        <div class="dock-links-inner">
-          <a href="#about" class="dock-link active">About</a>
-          <a href="#journey" class="dock-link">Journey</a>
-          <a href="#research" class="dock-link">Research &amp; Honors</a>
-          <a href="#projects" class="dock-link">Projects</a>
-          <a href="#courses" class="dock-link">Courses</a>
-          <a href="#contact" class="dock-link">Contact</a>
-        </div>
+        <span class="dock-divider"></span>
+
+        <button type="button" id="theme-toggle" class="dock-theme-btn" aria-label="Switch color theme">
+          <span id="theme-toggle-icon">☀</span>
+          <span id="theme-toggle-label">Light Mode</span>
+        </button>
       </div>
 
-      <span class="dock-divider"></span>
-
-      <button type="button" id="theme-toggle" class="dock-theme-btn" aria-label="Switch color theme">
-        <span id="theme-toggle-icon">☀</span>
-        <span id="theme-toggle-label">Light Mode</span>
-      </button>
+      <div class="dock-links-drawer" id="dock-links-drawer">
+        <a href="#about" class="dock-link active">About</a>
+        <a href="#journey" class="dock-link">Journey</a>
+        <a href="#research" class="dock-link">Research &amp; Honors</a>
+        <a href="#projects" class="dock-link">Projects</a>
+        <a href="#courses" class="dock-link">Courses</a>
+        <a href="#contact" class="dock-link">Contact</a>
+      </div>
     </nav>
   </header>
 
