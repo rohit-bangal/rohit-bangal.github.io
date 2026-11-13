@@ -753,7 +753,8 @@ p:last-child {
 }
 
 .project-visual {
-  height: 220px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   background: var(--bg-stage);
   border-bottom: 1px solid var(--border-hairline);
   overflow: hidden;
